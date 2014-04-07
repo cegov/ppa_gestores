@@ -42,9 +42,9 @@ test: &test
   socket: /var/run/mysqld/mysqld.sock
 
 production: &production
-  encoding: utf8
-  adapter: pg
-  host: localhost
-  database: ppagestores_production
-  username: your_production_database_login
-  password: your_production_database_password
+  # encoding: utf8
+  # adapter: pg
+  # host: localhost
+  # database: ppagestores_production
+  # username: your_production_database_login
+  # password: your_production_database_password
