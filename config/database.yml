@@ -42,6 +42,10 @@ test: &test
   socket: /var/run/mysqld/mysqld.sock
 
 production: &production
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: ppagestores_production
   # encoding: utf8
   # adapter: pg
   # host: localhost
