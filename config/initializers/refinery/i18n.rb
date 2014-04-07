@@ -1,11 +1,11 @@
 # encoding: utf-8
 
 Refinery::I18n.configure do |config|
-  # config.default_locale = :en
+  config.default_locale = :'pt-BR'
 
-  # config.current_locale = :en
+  config.current_locale = :'pt-BR'
 
-  # config.default_frontend_locale = :en
+  config.default_frontend_locale = :'pt-BR'  
 
   # config.frontend_locales = [:en]
 
