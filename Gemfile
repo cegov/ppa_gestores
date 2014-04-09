@@ -8,6 +8,7 @@ gem 'rails', '3.2.17'
 group :development, :test do
   # gem 'sqlite3'
   gem 'mysql2'
+  gem 'thin'
 end
 
 group :production do
@@ -20,10 +21,10 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
+  gem 'therubyracer'  
+  gem 'less-rails'
+  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+  gem 'bootstrap-addons-rails'
   gem 'uglifier', '>= 1.0.3'
 end
 

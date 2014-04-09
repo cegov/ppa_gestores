@@ -3,7 +3,7 @@ Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, fica
 As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4. 
 
 TO-DO-LIST:
-fazer o override das views do CMS para integrar o HTML já criado 
+OK fazer o override das views do CMS para integrar o HTML já criado 
 instalar o twitter bootstrap
 integrar twitter bootstrap com CMS
 transferir arquivos de layout do governo
@@ -12,11 +12,11 @@ adequar CSS/less com o override do Twitter bootstrap
 Criar páginas Cursos, notícias, eventos e FAQ
 
 DONE:
-CMS
-default de linguagens é em pt-BR
-criar página início com texto qq
-criar página sobre com texto qq
-fazer sistema para transferência de imagens
-fazer sistema para transferência de arquivos
-fazer sistema de gerenciamento de usuários e contas
-fazer dashboard com mudanças recentes feitas nas páginas do site pelo Gestor de Conteúdo
+OK CMS
+OK default de linguagens é em pt-BR
+OK criar página início com texto qq
+OK criar página sobre com texto qq
+OK fazer sistema para transferência de imagens
+OK fazer sistema para transferência de arquivos
+OK fazer sistema de gerenciamento de usuários e contas
+OK fazer dashboard com mudanças recentes feitas nas páginas do site pelo Gestor de Conteúdo

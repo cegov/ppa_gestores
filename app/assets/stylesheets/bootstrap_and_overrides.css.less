@@ -1,0 +1,166 @@
+@import "twitter/bootstrap/bootstrap";
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+@import "colors";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+/*******************************************************************/
+
+/*** TYPOGRAPHY ****************************************************/
+@font-size-small: 10px;
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700"); 
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body p {
+    font-style: normal;
+    font-weight: 400; /* You specify the number you see next to the fonts to change from light to bold ie you would put 700 etc. etc. */
+}  
+
+/*** ALL-PURPOSE *************************************************/
+.add-margins {
+  padding: 20px;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.padded {
+  padding: 10px 20px 10px 20px; 
+}
+
+img.center {   display: block;   margin-left: auto;   margin-right: auto; }
+div.center, nav ul.center { text-align: center; } 
+.vertical-aligned {
+  text-align: center;
+  //background: #c0c0c0;
+  //border: #a0a0a0 solid 1px;
+  // margin: 20px;
+}
+ 
+.vertical-aligned:before {
+  content: '';
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+  //margin-right: -0.25em; /* Adjusts for spacing */
+    
+  /* For visualization 
+  background: #808080; width: 5px;
+  */
+ }
+
+/*** HEADER ********************************************************/
+header {  
+  color: @white; 
+  background-color: @primary;
+  #accessibility_menu {
+      padding: 0px 20px 0px 20px;             
+      a {
+        &:link {color: @white;}      /* unvisited link */
+        &:visited {color: @white;}  /* visited link */  
+        &:hover {color:darken(@white, 15%);}  /* mouse over link */
+        &:active {color:darken(@white, 15%);}  /* selected link */
+      }
+      background-color: @primary;
+      #links_to_content a {
+        font-size: @font-size-small;
+             
+      }
+      #accessibility_actions {
+        font-size: @font-size-small;  
+        ul {
+          border-bottom: 1px dotted @white;
+        }      
+      }      
+  }
+  #logo_bar {
+      padding: 10px 40px 10px 40px;    
+      background-color: @primary;
+      #logo {
+        h1, h5, h6 {
+          margin: 0px 0px 4px;
+        }
+        #logo_denomination {
+          font-size: 11px;          
+        }
+        #logo_subordination {
+          font-size: 11px;
+        }
+      }
+      #busca_e_social {
+        #busca {
+          width: 100%;
+          height: 30px;
+          margin-bottom: 12px;
+          form {
+            margin-bottom: 0px;
+          }
+        }
+        #social {
+          text-align: right;
+          width: 100%;
+          height: 30px;
+          #social_links {
+            text-align: right;
+            height: 30px;
+            width: 80px;
+            i {
+              color: @white;
+              font-size: 20px;
+              // background-color: @contrast;
+            }
+          }          
+        }
+      }
+  }
+  #nav_services {
+      div.navbar-inner {
+        
+      }
+  }  
+}
+
+/*** BODY ******************************************************/
+
+body {
+  background-color: @white;
+}
+#content {
+  min-height: 500px;
+  h1, h2, h3, h4, h5, h6 {
+    //color: darken(@green, 15%);    
+  }
+}
+
+/*** FOOTER ****************************************************/
+
+footer {
+  color: @white;
+  background-color: @primary;
+  #footer_links {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #government_links {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: @contrast;
+  }  
+}
