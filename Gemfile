@@ -25,6 +25,7 @@ group :assets do
   gem 'less-rails'
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'bootstrap-addons-rails'
+  gem 'font-awesome-less'
   gem 'uglifier', '>= 1.0.3'
 end
 
