@@ -8,10 +8,12 @@ OK instalar o twitter bootstrap
 OK reescrever o html do header para integrar Twitter bootstrap e Refinery CMS
 OK reescrever o html do footer para integrar Twitter bootstrap e Refinery CMS
 OK transferir imagens para se adequar ao layout 3 do Guia de Estilos de sites do governo
-adequar CSS/less com o override do Twitter bootstrap: 
-  reescrever o html do body#content para integrar Twitter bootstrap e Refinery CMS
-  reescrever o html do body#side_bar para integrar Twitter bootstrap e Refinery CMS
+OK adequar CSS/less com o override do Twitter bootstrap: 
+OK  reescrever o html do body#content para integrar Twitter bootstrap e Refinery CMS
+OK  reescrever o html do body#side_bar para integrar Twitter bootstrap e Refinery CMS
 OK escrever método para colocar os glyphs do font awesome
+mudar a cor de page title, é um link agora, tem que mudar a cor de hover na mixin 
+achar uma forma de fazer os links das páginas aparecerem automaticamente no menu
 
 --------------------
 Criar páginas Cursos, notícias, eventos e FAQ

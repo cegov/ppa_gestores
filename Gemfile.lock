@@ -71,8 +71,6 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
-    font-awesome-less (4.0.2)
-      less-rails (>= 2.4.2)
     friendly_id (4.0.10.1)
       activerecord (>= 3.0, < 4.0)
     globalize (3.1.0)
@@ -219,7 +217,6 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-addons-rails
   coffee-rails (~> 3.2.1)
-  font-awesome-less
   jquery-rails
   less-rails
   mysql2
