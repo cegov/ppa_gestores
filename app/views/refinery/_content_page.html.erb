@@ -5,13 +5,12 @@
     # }) 
 %>
 
-<div class="span3 well well sidebar-nav">
+<div class="span3 well sidebar-nav">
 	<%=raw @page.content_for(:side_body) %>
 </div>
 <div class="span9">
 	<h2><%= @page.title %></h2>
 	<%=raw @page.content_for(:body) %>	
 </div>
-
 
 <%= render '/refinery/draft_page_message' unless @page.try(:live?) -%>
