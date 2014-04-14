@@ -70,6 +70,13 @@ div.center, nav ul.center { text-align: center; }
 header {  
   color: @white; 
   background-color: @primary;
+  #logo_portal_name a {
+    text-decoration:none;
+    &:link {color: @white;}      /* unvisited link */
+    &:visited {color: @white;}  /* visited link */  
+    &:hover {color:darken(@white, 15%);}  /* mouse over link */
+    &:active {color:darken(@white, 15%);}  /* selected link */
+  } 
   #accessibility_menu {
       padding: 0px 20px 0px 20px;             
       a {
