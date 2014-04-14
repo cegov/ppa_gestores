@@ -24,7 +24,7 @@
 			<div id="logo" class="span6">
 				<h5 id="logo_denomination">Portal para gestores locais</h3>
 				<h1 id="logo_portal_name"><%= link_to Refinery::Core.site_name, refinery.root_path %></h1>
-				<h6 id="logo_subordination">MINISTÉRIO DO PLANEJAMENTO, ORÇAMENTO E GESTÃO</h5>
+				<h6 id="logo_subordination">MINISTÉRIO DO PLANEJAMENTO, ORÇAMENTO E GESTÃO</h6>
 			</div>
 			<div id="busca_e_social" class="span6">
 				<div class="vertical-aligned">
@@ -46,43 +46,12 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div id="nav_services" class="navbar navbar-fluid-top">
+	</div>	
+	<div id="nav_services" class="navbar navbar-fluid-top">		
 		<div class="navbar-inner">
 			<div class="container-fluid">
 				<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>				
-				<div class="container-fluid nav-collapse">
-					<ul class="nav pull-right">
-						<li>
-							<%= # link_to "Início", inicio_path 
-							%>
-						</li>
-						<li>
-							<%= 
-							# link_to "Notícias", noticias_path 
-							%>
-						</li>
-						<li>
-							<%= 
-							# link_to "Cursos", cursos_path 
-							%>
-						</li>
-						<li>
-							<%= #link_to "Wiki", wiki_path 
-							%>
-						</li>
-						<li>
-							<%= 
-							# link_to "Fórum de discussões", forum_path 
-							%>
-						</li>
-						<li>
-							<%= 
-							# link_to "Sobre", sobre_path 
-							%>
-						</li>
-					</ul>
-				</div><!--/.nav-collapse -->
+				<%= menu_header.to_html %>				
 			</div>
 		</div>
 	</div>
