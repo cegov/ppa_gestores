@@ -1,0 +1,14 @@
+<div class="span3">	
+	
+</div>
+<div class="span9">
+  <ul id="courses">
+    <% @courses.each do |course| %>
+      <li>
+        <%= link_to course.name, refinery.courses_course_path(course) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+

@@ -3,20 +3,26 @@ Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, fica
 As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4. 
 
 TO-DO-LIST: fazer a seção cursos
-Create model:
+OK Create model and database:
 	Model Course
 	name:string
 	user_id:integer
 	is_active:boolean
 	description:text
-	photo:image	
+	duration_quantity:integer
+	duration_type:string		
 	classes_start_on:date
 	classes_end_on:date
 	created_on:date
-	updated_on:date
-Create a gem to encapsulate the code
-Create a rails engine refinery-course
-
+	updated_on:date	
+OK Create a gem to encapsulate the code
+OK Create a rails engine refinery-course
+OK Translate the en.yml file
+OK Create a tab on the menu
+OK Override the layout to show only fields with meaning to the user
+Create model filters to prevent user abuse
+OK FIX: Bootstrap css does not load on Refinery adminarea
+OK FIX: Título do plugin está em inglês
 
 
 --------------------
