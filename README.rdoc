@@ -2,31 +2,10 @@ DEADLINES:
 Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, ficarão prontas para o dia 10/4.
 As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4. 
 
-rails g migration change_data_types_for_faq
-change_table :table_name do |t|
-  t.change :column_name, :column_type, {options}
-end
-
 ---------------------
-OK Criar FAQ:
+TO DO
 
-TO-DO-LIST: fazer a seção noticias
-Create model and database:
-	Model faqs	
-	refinery_user_id:integer
-	question:string	
-	answer:string	
-	is_published:boolean			
-	created_on:date
-	updated_on:date	
-Create a gem to encapsulate the code
-Create a rails engine refinery-course
-Translate the en.yml file
-Create a tab on the menu
-Override the layout to show only fields with meaning to the user
-Editar index, show nas views do dir refinery e editar _form das views de admin
 
-rails g refinery:engine faq refinery_user_id:integer question:string answer:string is_published:boolean
 
 --------------------
 TO implement / fix / etc
@@ -108,3 +87,20 @@ OK Translate the en.yml file
 OK Create a tab on the menu
 OK Override the layout to show only fields with meaning to the user
 
+OK Criar FAQ:
+
+OK TO-DO-LIST: fazer a seção noticias
+OK Create model and database:
+	Model faqs	
+	refinery_user_id:integer
+	question:string	
+	answer:string	
+	is_published:boolean			
+	created_on:date
+	updated_on:date	
+OK Create a gem to encapsulate the code
+OK Create a rails engine refinery-course
+OK Translate the en.yml file
+OK Create a tab on the menu
+OK Override the layout to show only fields with meaning to the user
+OK Editar index, show nas views do dir refinery e editar _form das views de admin
