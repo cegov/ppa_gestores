@@ -3,19 +3,14 @@ Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, fica
 As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4. 
 
 ---------------------
-
-Criar eventos e notícias
+OK Criar FAQ:
 
 TO-DO-LIST: fazer a seção noticias
 Create model and database:
-	Model News	
+	Model faqs	
 	refinery_user_id:integer
-	headline:string	
-	lead:string
-	byline:string
-	photo:image	
-	story:text
-	event_date:date
+	question:string	
+	answer:string	
 	is_published:boolean			
 	created_on:date
 	updated_on:date	
@@ -24,12 +19,19 @@ Create a rails engine refinery-course
 Translate the en.yml file
 Create a tab on the menu
 Override the layout to show only fields with meaning to the user
-Create model filters to prevent user abuse
 
-rails g refinery:engine newsarticle refinery_user_id:integer headline:string lead:string byline:string photo:image story:text event_date:date is_published:boolean
+
+rails g refinery:engine faq refinery_user_id:integer question:string answer:string is_published:boolean
 
 --------------------
 Criar páginas Cursos, notícias, eventos e FAQ
+
+O sistema deve previnir que o usuário manipule URLs para chegar a notícias que não foram publicadas
+Traduzir o conteúdo da seed antes de fazer o deploy
+Criar relação has_many/belong_to entre os recursos criados e refinery_user
+Consertar bug que mostra diversas entradas para os roles do usuário quando se trata dos recursos criados
+
+--------------------
 
 DONE:
 OK CMS
@@ -74,3 +76,25 @@ OK Override the layout to show only fields with meaning to the user
 Create model filters to prevent user abuse
 OK FIX: Bootstrap css does not load on Refinery adminarea
 OK FIX: Título do plugin está em inglês
+
+OK Criar eventos e notícias:
+
+TO-DO-LIST: fazer a seção noticias
+OK Create model and database:
+	Model News	
+	refinery_user_id:integer
+	headline:string	
+	lead:string
+	byline:string
+	photo:image	
+	story:text
+	event_date:date
+	is_published:boolean			
+	created_on:date
+	updated_on:date	
+OK Create a gem to encapsulate the code
+OK Create a rails engine refinery-course
+OK Translate the en.yml file
+OK Create a tab on the menu
+OK Override the layout to show only fields with meaning to the user
+
