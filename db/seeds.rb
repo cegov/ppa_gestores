@@ -11,3 +11,6 @@ Refinery::Pages::Engine.load_seed
 
 # Added by Refinery CMS Courses extension
 Refinery::Courses::Engine.load_seed
+
+# Added by Refinery CMS Newsarticles extension
+Refinery::Newsarticles::Engine.load_seed

@@ -2,28 +2,31 @@ DEADLINES:
 Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, ficarão prontas para o dia 10/4.
 As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4. 
 
-TO-DO-LIST: fazer a seção cursos
-OK Create model and database:
-	Model Course
-	name:string
-	user_id:integer
-	is_active:boolean
-	description:text
-	duration_quantity:integer
-	duration_type:string		
-	classes_start_on:date
-	classes_end_on:date
+---------------------
+
+Criar eventos e notícias
+
+TO-DO-LIST: fazer a seção noticias
+Create model and database:
+	Model News	
+	refinery_user_id:integer
+	headline:string	
+	lead:string
+	byline:string
+	photo:image	
+	story:text
+	event_date:date
+	is_published:boolean			
 	created_on:date
 	updated_on:date	
-OK Create a gem to encapsulate the code
-OK Create a rails engine refinery-course
-OK Translate the en.yml file
-OK Create a tab on the menu
-OK Override the layout to show only fields with meaning to the user
+Create a gem to encapsulate the code
+Create a rails engine refinery-course
+Translate the en.yml file
+Create a tab on the menu
+Override the layout to show only fields with meaning to the user
 Create model filters to prevent user abuse
-OK FIX: Bootstrap css does not load on Refinery adminarea
-OK FIX: Título do plugin está em inglês
 
+rails g refinery:engine newsarticle refinery_user_id:integer headline:string lead:string byline:string photo:image story:text event_date:date is_published:boolean
 
 --------------------
 Criar páginas Cursos, notícias, eventos e FAQ
@@ -49,3 +52,25 @@ OK  reescrever o html do body#side_bar para integrar Twitter bootstrap e Refiner
 OK escrever método para colocar os glyphs do font awesome 
 OK achar uma forma de fazer os links das páginas aparecerem automaticamente no menu
 OK mudar a cor de page title, é um link agora, tem que mudar a cor de hover na mixin
+
+TO-DO-LIST: fazer a seção cursos
+OK Create model and database:
+	Model Course
+	name:string
+	user_id:integer
+	is_active:boolean
+	description:text
+	duration_quantity:integer
+	duration_type:string		
+	classes_start_on:date
+	classes_end_on:date
+	created_on:date
+	updated_on:date	
+OK Create a gem to encapsulate the code
+OK Create a rails engine refinery-course
+OK Translate the en.yml file
+OK Create a tab on the menu
+OK Override the layout to show only fields with meaning to the user
+Create model filters to prevent user abuse
+OK FIX: Bootstrap css does not load on Refinery adminarea
+OK FIX: Título do plugin está em inglês
