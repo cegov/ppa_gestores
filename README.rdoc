@@ -10,7 +10,9 @@ traduzir as seeds do banco de dados
 
 programar a busca
 
+programar os links de acessibilidade 
 
+programar os links de alto contraste
 
 ---------------------
 TO implement / fix / etc
