@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140422221356) do
+ActiveRecord::Schema.define(:version => 20140423010849) do
 
   create_table "refinery_courses", :force => true do |t|
     t.string   "name"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(:version => 20140422221356) do
   end
 
   add_index "refinery_courses", ["user_id"], :name => "index_refinery_courses_on_user_id"
+
+  create_table "refinery_faqs", :force => true do |t|
+    t.integer  "refinery_user_id"
+    t.string   "question"
+    t.string   "answer"
+    t.boolean  "is_published"
+    t.integer  "position"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"

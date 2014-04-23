@@ -58,3 +58,4 @@ gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 
 gem 'refinerycms-courses', :path => 'vendor/extensions'
 gem 'refinerycms-newsarticles', :path => 'vendor/extensions'
+gem 'refinerycms-faqs', :path => 'vendor/extensions'

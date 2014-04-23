@@ -13,6 +13,8 @@ PATH
   specs:
     refinerycms-courses (1.0)
       refinerycms-core (~> 2.1.2)
+    refinerycms-faqs (1.0)
+      refinerycms-core (~> 2.1.2)
     refinerycms-newsarticles (1.0)
       refinerycms-core (~> 2.1.2)
 
@@ -234,6 +236,7 @@ DEPENDENCIES
   refinerycms (~> 2.1.0)
   refinerycms-acts-as-indexed (~> 1.0.0)
   refinerycms-courses!
+  refinerycms-faqs!
   refinerycms-newsarticles!
   sass-rails (~> 3.2.3)
   therubyracer

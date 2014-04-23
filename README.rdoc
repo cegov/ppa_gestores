@@ -19,18 +19,23 @@ Create a rails engine refinery-course
 Translate the en.yml file
 Create a tab on the menu
 Override the layout to show only fields with meaning to the user
-
+Editar index, show nas views do dir refinery e editar _form das views de admin
 
 rails g refinery:engine faq refinery_user_id:integer question:string answer:string is_published:boolean
 
 --------------------
+TO implement / fix / etc
+
 Criar páginas Cursos, notícias, eventos e FAQ
 
 O sistema deve previnir que o usuário manipule URLs para chegar a notícias que não foram publicadas
 Traduzir o conteúdo da seed antes de fazer o deploy
 Criar relação has_many/belong_to entre os recursos criados e refinery_user
 Consertar bug que mostra diversas entradas para os roles do usuário quando se trata dos recursos criados
-
+Extender model/controller para sempre mostrar news na barra lateral
+Implementar if/else na view que considera se is_active ou is_published está setado
+Criar migration para renomear campo user_id do model Course para refinery_user_id
+Criar keys na db para agilizar as buscas
 --------------------
 
 DONE:
