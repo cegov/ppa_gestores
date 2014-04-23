@@ -2,6 +2,11 @@ DEADLINES:
 Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, ficarão prontas para o dia 10/4.
 As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4. 
 
+rails g migration change_data_types_for_faq
+change_table :table_name do |t|
+  t.change :column_name, :column_type, {options}
+end
+
 ---------------------
 OK Criar FAQ:
 
