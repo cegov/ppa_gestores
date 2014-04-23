@@ -1,10 +1,14 @@
+<div class="span3 well sidebar-nav"">	
+	<%= render '/refinery/show_newsarticle', :newsarticles => @newsarticles %>
+</div>
 <div class="span9">
   <ul id="faqs">
     <% @faqs.each do |faq| %>
     	 <h3><%=raw faq.question %></h3>
     	 <p><%=raw faq.answer %></p>
      
-    	<% link_to faq.question, refinery.faqs_faq_path(faq) %>
+    	<% #link_to faq.question, refinery.faqs_faq_path(faq) 
+    	%>
      
     <% end %>
   </ul>

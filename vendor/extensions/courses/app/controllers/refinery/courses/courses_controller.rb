@@ -4,7 +4,7 @@ module Refinery
 
       before_filter :find_all_courses
       before_filter :find_page
-      
+      before_filter :find_all_newsarticles  
       
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
@@ -21,6 +21,10 @@ module Refinery
       end
 
     protected
+      def find_all_newsarticles
+        @newsarticles = Refinery::Newsarticles::Newsarticle.where(:is_published => true)
+      end
+      
       
       def find_all_courses
         @courses = Course.order('position ASC')
@@ -29,11 +33,7 @@ module Refinery
       def find_page
         @page = ::Refinery::Page.where(:link_url => "/courses").first
       end
-    private
-      def get_user_id
-        logger.debug "HEY! ####################################################"
-      end  
-
+      
     end
   end
 end

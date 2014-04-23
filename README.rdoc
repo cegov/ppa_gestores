@@ -6,8 +6,13 @@ As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 TO DO
 
 
+traduzir as seeds do banco de dados
 
---------------------
+programar a busca
+
+
+
+---------------------
 TO implement / fix / etc
 
 Criar páginas Cursos, notícias, eventos e FAQ
@@ -104,3 +109,10 @@ OK Translate the en.yml file
 OK Create a tab on the menu
 OK Override the layout to show only fields with meaning to the user
 OK Editar index, show nas views do dir refinery e editar _form das views de admin
+
+OK: fazer com que as notícias apareçam sempre na barra lateral
+OK extender o controller para pegar as notícias do banco de dados
+OK criar um decorator ao invés de fazer override do controller
+OK Criar before_filters para as engines criadas para pegar os artigos de notícias do db
+OK mover para uma partial o menu lateral
+
