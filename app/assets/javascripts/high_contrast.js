@@ -1,7 +1,7 @@
 // This class is used to define how elements will behave in high contrast mode
 // to define the intended look do so in the file bootstrap_and_overrides.css.less
 var HighContrast = {
-	isOn: false,
+	isOn: "0",
 	objDefaults: {
 		initTarget: "#high-contrast-tgt",
 		
@@ -15,24 +15,41 @@ var HighContrast = {
 		/**********************************************************************/
 	}, 
 	init: function(){
-		this.initAccessibilityButton();			
+		if(typeof($.cookie("high-contrast") == "undefined")){
+			HighContrast.isOn = $.cookie("high-contrast");
+		}
+		this.initAccessibilityButton();	
+		this.setContrastAccordingToCookie();		
 	},
-	initAccessibilityButton: function(){	
+	initAccessibilityButton: function(){
+		var self = this;	
+		
 		$(HighContrast.objDefaults.initTarget).on('click', function(){
 			if(HighContrast.isOn == false){
 				HighContrast.isOn = true;
-				$.each(HighContrast.objDefaults.backgroundTargets, function( index, idOrClassOfTheElement ) {
-					$(idOrClassOfTheElement).addClass("high-contrast");
-				});
-				
+				$.cookie("high-contrast", 1);
+				self.changeElementColorsToHighContrast();				
 			}
 			else {
-				HighContrast.isOn = false;				
+				HighContrast.isOn = false; 
+				$.cookie("high-contrast", 0); 				
 				$.each(HighContrast.objDefaults.backgroundTargets, function( index, idOrClassOfTheElement ) {
 					$(idOrClassOfTheElement).removeClass("high-contrast");
 				});
 			}			
 		});
-	}
+	},
+	setContrastAccordingToCookie: function(){
+		if($.cookie("high-contrast") == "1"){
+			this.changeElementColorsToHighContrast();
+		}
+	},
+	changeElementColorsToHighContrast: function(){
+		$.each(HighContrast.objDefaults.backgroundTargets, function( index, idOrClassOfTheElement ) {
+			$(idOrClassOfTheElement).addClass("high-contrast");					 
+		});
+	} 
+	
+	
 	
 };
