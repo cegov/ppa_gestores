@@ -18,6 +18,10 @@ var HighContrast = {
 		if(typeof($.cookie("high-contrast") == "undefined")){
 			HighContrast.isOn = $.cookie("high-contrast");
 		}
+		else {
+			HighContrast.isOn = "0";
+			$.cookie("high-contrast", "0");
+		}
 		this.initAccessibilityButton();	
 		this.setContrastAccordingToCookie();		
 	},
@@ -27,12 +31,12 @@ var HighContrast = {
 		$(HighContrast.objDefaults.initTarget).on('click', function(){
 			if(HighContrast.isOn == false){
 				HighContrast.isOn = true;
-				$.cookie("high-contrast", 1);
+				$.cookie("high-contrast", "1");
 				self.changeElementColorsToHighContrast();				
 			}
 			else {
 				HighContrast.isOn = false; 
-				$.cookie("high-contrast", 0); 				
+				$.cookie("high-contrast", "0"); 				
 				$.each(HighContrast.objDefaults.backgroundTargets, function( index, idOrClassOfTheElement ) {
 					$(idOrClassOfTheElement).removeClass("high-contrast");
 				});
