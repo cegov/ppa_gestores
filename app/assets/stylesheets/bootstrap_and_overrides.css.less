@@ -42,8 +42,7 @@ body p {
 // to define the intended behavior or add new page elements that should behave like that, 
 // do so in the file high_contrast.js 
 .high-contrast {
-  background-image: none;
-  
+  background-image: none !important;    
   background-color: #000 !important;  
   color: #fff !important;
   div#nav_services.navbar div.navbar-inner {
@@ -105,6 +104,16 @@ div.center, nav ul.center { text-align: center; }
   background: #808080; width: 5px;
   */
  }
+ 
+ ul.nav.nav-list li {
+   a {
+      text-decoration:none;
+      &:link { color:lighten(@primary, 10%); }
+      &:visited { color:lighten(@primary, 10%); }   /* visited link */  
+      &:hover { color: @primary; }
+      &:active { color: @primary; }
+    }
+ }
 
 /*** HEADER ********************************************************/
 
@@ -112,6 +121,8 @@ div.center, nav ul.center { text-align: center; }
 header {  
   color: @white; 
   background-color: @primary;
+  #gradient > .vertical(darken(@primary, 15%), @primary); 
+  
   #logo_portal_name a {
     text-decoration:none;
     &:link {color: @white;}      /* unvisited link */
@@ -127,7 +138,7 @@ header {
         &:hover {color:darken(@white, 15%);}  /* mouse over link */
         &:active {color:darken(@white, 15%);}  /* selected link */
       }
-      background-color: @primary;
+      background-color: none;
       #links_to_content a {
         font-size: @font-size-small;
              
@@ -141,7 +152,7 @@ header {
   }
   #logo_bar {
       padding: 10px 40px 10px 40px;    
-      background-color: @primary;
+      background-color: none;
       #logo {
         h1, h5, h6 {
           margin: 0px 0px 4px;
@@ -202,9 +213,10 @@ body {
 
 /*** FOOTER ****************************************************/
 
-footer {
+footer #rodape {
   color: @white;
   background-color: @primary;
+  
   #footer_links {
     padding-top: 20px;
     padding-bottom: 20px;
