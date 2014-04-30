@@ -214,17 +214,19 @@ body {
 /*** FOOTER ****************************************************/
 
 footer #rodape {
+  
   color: @white;
   background-color: @primary;
+  #gradient > .vertical(@primary, darken(@primary, 15%));
   
   #footer_links {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 0px;
   }
   #government_links {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: @contrast;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: none; //@contrast;
   }  
 }
 
