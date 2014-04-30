@@ -1,10 +1,12 @@
-<%= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
+<% 
+	#Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html 
+%>
 
 	<div id="accessibility_menu" class="container-fluid">
 		<div class="row-fluid">
 			<div id="links_to_content">
 				<ul class="inline pull-left">
-					<a href="#content" accesskey="1">Ir para o conteúdo <span>1</span></a> |  
+					<a href="#page" accesskey="1">Ir para o conteúdo <span>1</span></a> |  
 					<a href="#menu_lateral" accesskey="2">Ir para o menu <span>2</span></a> |  
 					<a href="#busca" accesskey="3">Ir para a busca <span>3</span></a> | 
 					<a href="#rodape" accesskey="4">Ir para o rodapé <span>4</span></a>
@@ -12,8 +14,8 @@
 			</div>			
 			<div id="accessibility_actions">
 				<ul class="inline pull-right">				  
-					<a href="#">ACESSIBILIDADE</a> |  
-					<a href="#">ALTO CONTRASTE</a> | 
+					<a href="#" id="accessibility-tgt">ACESSIBILIDADE</a> |  
+					<a href="#" id="high-contrast-tgt">ALTO CONTRASTE</a> | 
 					<a href="#">MAPA DO SITE</a>
 				</ul>
 			</div>

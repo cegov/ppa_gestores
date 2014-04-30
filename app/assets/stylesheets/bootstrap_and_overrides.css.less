@@ -21,6 +21,8 @@
 
 /*******************************************************************/
 
+
+
 /*** TYPOGRAPHY ****************************************************/
 @font-size-small: 10px;
 
@@ -35,6 +37,41 @@ body p {
 }  
 
 /*** ALL-PURPOSE *************************************************/
+
+.high-contrast {
+  background-image: none;
+  
+  background-color: #000 !important;  
+  color: #fff !important;
+  div#nav_services.navbar div.navbar-inner {
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+  }
+  a {
+    text-decoration:none;
+    &:link {
+      color: @white !important;
+      background-color: @black !important;
+    }      /* unvisited link */
+    &:visited {
+      color: @white !important;
+      background-color: @black !important;
+    }  /* visited link */  
+    &:hover {
+      color:darken(@white, 15%) !important;
+      background-color: @black !important;
+    }  /* mouse over link */
+    &:active {
+      color:darken(@white, 15%) !important;
+      background-color: @black !important;
+    }  /* selected link */
+  }
+  footer {
+    border-top: thin solid @white;
+  }
+}
+
 .add-margins {
   padding: 20px;
   max-width: 1600px;
@@ -67,6 +104,8 @@ div.center, nav ul.center { text-align: center; }
  }
 
 /*** HEADER ********************************************************/
+
+
 header {  
   color: @white; 
   background-color: @primary;

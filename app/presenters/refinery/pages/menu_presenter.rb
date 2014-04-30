@@ -145,7 +145,7 @@ module Refinery
       def within_max_depth?(menu_item)
         !max_depth || menu_item.depth < max_depth
       end
-
+      
     end
   end
 end
