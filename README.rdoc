@@ -6,25 +6,31 @@ OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 ---------------------
 TO DO
 
-OK traduzir as seeds do banco de dados
+programar o link de acessibilidade: 
+copiar essa página: http://www.brasil.gov.br/acessibilidade
+programar os atalhos do teclado para que a explicação acima funcione
+
+tratar campos null e blank nas views show de newsarticles e courses
+ajustar a lista de cursos na view de cursos
+usar jquery para esconder as respostas para as perguntas e mostrar on click
+
+a view notícias podia ter um small hermit div nesse formato:
+" por Brasil — publicado 19/06/2013 15:27, última modificação 23/08/2013 14:01 "
+
+fazer a relação dos recursos dos plugins e a class Refinery_User
+vide:
+http://refinerycms.com/guides/relating-resources-in-an-extension
+http://refinerycms.com/guides/extending-controllers-with-decorators
+
 
 ajustar campo resumo na parte administrativa de newsarticles, ver limite de caracteres (255? 128? um tweet?)
 
-programar os links de acessibilidade 
-
-OK programar o link de alto contraste
-revisar páginas para ver se todas estão funcionando
-criar novas páginas e ver se o botão funciona
-ver se as páginas dos plugins funcionam com HC
-
-tratar campos null e blank nas views
-
-programar a busca?
+programar a busca? usar solr?
 
 ---------------------
 TO implement / fix / etc
 
-Criar páginas Cursos, notícias, eventos e FAQ
+OK Criar páginas Cursos, notícias, eventos e FAQ
 
 O sistema deve previnir que o usuário manipule URLs para chegar a notícias que não foram publicadas
 Traduzir o conteúdo da seed antes de fazer o deploy
@@ -134,22 +140,13 @@ BUGFIXED: não é possível editar/deletar páginas criadas
 O problema: 
 View:
  NoMethodError in Refinery/admin/pages#edit
+ Showing /home/deployer/.rvm/gems/ruby-2.0.0-p451/gems/refinerycms-pages-2.1.2/app/views/refinery/admin/pages/_form.html.erb where line #2 raised:
+ undefined method `persisted?' for nil:NilClass
 
-Showing /home/deployer/.rvm/gems/ruby-2.0.0-p451/gems/refinerycms-pages-2.1.2/app/views/refinery/admin/pages/_form.html.erb where line #2 raised:
+OK Alto contraste
+OK programar o link de alto contraste
+OK revisar páginas para ver se todas estão funcionando
+OK criar novas páginas e ver se o botão funciona
+OK ver se as páginas dos plugins funcionam com HC
 
-undefined method `persisted?' for nil:NilClass
-
-Extracted source (around line #2):
-
-1: <%= form_for [refinery, :admin, @page],
-2:              :url => (refinery.admin_page_path(@page.nested_url) if @page.persisted?) do |f| %>
-3: 
-4:   <%= render '/refinery/admin/error_messages', :object => @page, :include_object_name => true %>
-5: 
-
-Backend:
-Refinery::Page Load (0.5ms)  SELECT `refinery_pages`.* 
-	FROM `refinery_pages` INNER JOIN `refinery_page_translations` 
-	ON `refinery_page_translations`.`refinery_page_id` = `refinery_pages`.`id` 
-	WHERE `refinery_pages`.`parent_id` IS NULL AND `refinery_page_translations`.`locale` 
-	IN ('en') AND `refinery_page_translations`.`slug` = 'dara-erro' LIMIT 1
+OK traduzir as seeds do banco de dados
