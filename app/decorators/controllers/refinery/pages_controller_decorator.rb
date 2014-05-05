@@ -5,6 +5,6 @@ Refinery::PagesController.class_eval do
     protected
     
       def find_all_newsarticles
-        @newsarticles = Refinery::Newsarticles::Newsarticle.where(:is_published => true)        
+        @newsarticles = Refinery::Newsarticles::Newsarticle.get_pages_in_menu        
       end
 end

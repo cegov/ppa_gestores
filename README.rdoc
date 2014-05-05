@@ -13,7 +13,11 @@ OK ajustar a lista de cursos na view de cursos
 OK programar o link de acessibilidade: 
 OK copiar essa página: http://www.brasil.gov.br/acessibilidade
 OK programar os atalhos do teclado para que a explicação acima funcione
-criar link no menu
+
+OK refatorar a forma como as notícias são pegas, para poder alterar em um ponto o limite do número de artigos
+
+criar link no menu acessibilidade no menu:
+criar um decorator para pegar a página
 
 tratar campos null e blank nas views show de newsarticles e courses
 
