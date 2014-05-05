@@ -8,11 +8,12 @@ OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 ---------------------
 TO DO
 
-ajustar a lista de cursos na view de cursos
+OK ajustar a lista de cursos na view de cursos
 
-programar o link de acessibilidade: 
-copiar essa página: http://www.brasil.gov.br/acessibilidade
-programar os atalhos do teclado para que a explicação acima funcione
+OK programar o link de acessibilidade: 
+OK copiar essa página: http://www.brasil.gov.br/acessibilidade
+OK programar os atalhos do teclado para que a explicação acima funcione
+criar link no menu
 
 tratar campos null e blank nas views show de newsarticles e courses
 
