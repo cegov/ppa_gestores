@@ -1,17 +1,21 @@
-DEADLINES:
+DEADLINES
+
 OK Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, ficarão prontas para o dia 10/4.
+
 OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
    Design? Bugfix? 
 
 ---------------------
 TO DO
 
+ajustar a lista de cursos na view de cursos
+
 programar o link de acessibilidade: 
 copiar essa página: http://www.brasil.gov.br/acessibilidade
 programar os atalhos do teclado para que a explicação acima funcione
 
 tratar campos null e blank nas views show de newsarticles e courses
-ajustar a lista de cursos na view de cursos
+
 usar jquery para esconder as respostas para as perguntas e mostrar on click
 
 a view notícias podia ter um small hermit div nesse formato:

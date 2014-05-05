@@ -105,15 +105,16 @@ div.center, nav ul.center { text-align: center; }
   */
  }
  
- ul.nav.nav-list li {
-   a {
-      text-decoration:none;
-      &:link { color:lighten(@primary, 10%); }
-      &:visited { color:lighten(@primary, 10%); }   /* visited link */  
-      &:hover { color: @primary; }
-      &:active { color: @primary; }
-    }
- }
+ul {
+  list-style-type: none;  
+  li a { 
+    text-decoration:none;
+    &:link { color:lighten(@primary, 10%); }
+    &:visited { color:lighten(@primary, 10%); }   /* visited link */  
+    &:hover { color: @primary; }
+    &:active { color: @primary; }
+  }   
+}
 
 /*** HEADER ********************************************************/
 
@@ -232,4 +233,14 @@ footer #rodape {
 }
 
 /*** COURSES ***************************************************/
+
+ul#courses {
+  margin: 0px;
+  padding-top: 0px;  
+  li {
+    margin-top: 2px;
+  }
+}  
+
+/*** NEWS ******************************************************/
 
