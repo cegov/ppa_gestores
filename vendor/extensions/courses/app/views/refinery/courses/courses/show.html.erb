@@ -9,28 +9,37 @@
 
 <div class="span9">	
   <h2><%=raw @course.name %></h2>
-  <section>    
-  	<p>Professor responsável: <%=raw @course.teacher_name %></p>
-  </section>
-  <section>
-  	<h3>Descrição:</h3>
-  	<div>
-	    <p>
-	      <%=raw @course.description %>
-	    </p>
-	</div>
-  </section> 
-  <section> 
-  	<h3>Quando será o curso?</h3>    
-    <p>
-    	<% I18n.locale = "pt-BR" %>
-      De <%=raw @course.classes_start_on.strftime("%d/%m/%Y") %> a <%=raw @course.classes_end_on.strftime("%d/%m/%Y") %> 
-    </p>
-  </section>
-   <section>
-    <h3>Duração do curso:</h3>
-    <p>
-      <%=raw @course.duration %>
-    </p>
-  </section> 
+  <% if !@course.teacher_name.blank? %>
+	  <section>    
+	  	<p>Professor responsável: <%=raw @course.teacher_name %></p>
+	  </section>
+  <% end %>
+  <% if !@course.description.blank? %>
+	  <section>
+	  	<h3>Descrição:</h3>
+	  	<div>
+		    <p>
+		      <%=raw @course.description %>
+		    </p>
+		</div>
+	  </section>
+  <% end %>	   
+  <% if !@course.classes_start_on.blank? or !@course.classes_end_on.blank? %>
+	  <section> 
+	  	<h3>Quando será o curso?</h3>
+	  	<% if !@course.classes_start_on.blank? and !@course.classes_end_on.blank? %>    
+	    	<p>De <%=raw @course.classes_start_on.strftime("%d/%m/%Y") %> a <%=raw @course.classes_end_on.strftime("%d/%m/%Y") %></p>
+	    <% if !@course.classes_start_on.blank? %>
+	    	<p>Início das aulas: <%=raw @course.classes_start_on.strftime("%d/%m/%Y") %></p>
+	    <% if !@course.classes_end_on.blank? %>
+	    	<p>Término das aulas: <%=raw @course.classes_end_on.strftime("%d/%m/%Y") %></p>
+	    <% end %>
+	  </section>
+   <% end %>
+   <% if !@course.duration.blank? %>
+	  <section>
+	    <h3>Duração do curso:</h3>
+	    <p><%=raw @course.duration %></p>
+	  </section>
+   <% end %>
 </div>

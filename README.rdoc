@@ -3,38 +3,47 @@ DEADLINES
 OK Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, ficarão prontas para o dia 10/4.
 
 OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
-   Design? Bugfix? 
 
+
+   
 ---------------------
 TO DO
 
-OK ajustar a lista de cursos na view de cursos
+tirar fora barra lateral com notícias
+usar boxes como do site brasil.gov.br replicando as seções do site
+limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa
+fazer galeria de vídeos (usar blueimp)
+tirar obrigatoriedade de se colocar uma data de início e término dos cursos
+tirar obrigatoriedade de se colocar uma data de início e término das notícias/eventos
 
-OK programar o link de acessibilidade: 
-OK copiar essa página: http://www.brasil.gov.br/acessibilidade
-OK programar os atalhos do teclado para que a explicação acima funcione
+criar campo imagem em notícia
+criar image picker em notícia
+criar campo default false para notícia em destaque
 
-OK refatorar a forma como as notícias são pegas, para poder alterar em um ponto o limite do número de artigos
+OK criar página de acessibilidade no servidor de testes
+fazer upload da página de acessibilidade
 
-criar link no menu acessibilidade no menu:
-criar um decorator para pegar a página
+OK BUG botão previsualizar não funciona (courses/3)
 
-tratar campos null e blank nas views show de newsarticles e courses
+OK tratar campos null e blank nas views show de newsarticles
+tratar campos null e blank nas views show de courses
 
 usar jquery para esconder as respostas para as perguntas e mostrar on click
+
+arrumar a lista de notícias, formatação
 
 a view notícias podia ter um small hermit div nesse formato:
 " por Brasil — publicado 19/06/2013 15:27, última modificação 23/08/2013 14:01 "
 
-fazer a relação dos recursos dos plugins e a class Refinery_User
-vide:
+fazer a relação dos recursos dos plugins e a class Refinery_User vide:
 http://refinerycms.com/guides/relating-resources-in-an-extension
 http://refinerycms.com/guides/extending-controllers-with-decorators
-
 
 ajustar campo resumo na parte administrativa de newsarticles, ver limite de caracteres (255? 128? um tweet?)
 
 programar a busca? usar solr?
+
+NOT examinar a função justificar no editor
 
 ---------------------
 TO implement / fix / etc
@@ -42,7 +51,6 @@ TO implement / fix / etc
 OK Criar páginas Cursos, notícias, eventos e FAQ
 
 O sistema deve previnir que o usuário manipule URLs para chegar a notícias que não foram publicadas
-Traduzir o conteúdo da seed antes de fazer o deploy
 Criar relação has_many/belong_to entre os recursos criados e refinery_user
 Consertar bug que mostra diversas entradas para os roles do usuário quando se trata dos recursos criados
 Extender model/controller para sempre mostrar news na barra lateral
@@ -159,3 +167,12 @@ OK criar novas páginas e ver se o botão funciona
 OK ver se as páginas dos plugins funcionam com HC
 
 OK traduzir as seeds do banco de dados
+
+OK ajustar a lista de cursos na view de cursos
+
+OK programar o link de acessibilidade: 
+OK copiar essa página: http://www.brasil.gov.br/acessibilidade
+OK programar os atalhos do teclado para que a explicação acima funcione
+OK refatorar a forma como as notícias são pegas, para poder alterar em um ponto o limite do número de artigos
+
+OK criar link no menu acessibilidade no menu:

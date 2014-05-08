@@ -1,9 +1,11 @@
 <div class="span9">
   <ul id="newsarticles">
     <% @newsarticles.each do |newsarticle| %>
-      <li>
-        <%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %>
-      </li>
+    	<% if newsarticle.is_published? %>
+	      <li>
+	        <%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %>
+	      </li>
+	    <% end %>
     <% end %>
   </ul>
 </div>
