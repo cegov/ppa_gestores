@@ -109,10 +109,10 @@ ul {
   list-style-type: none;  
   li a { 
     text-decoration:none;
-    &:link { color:lighten(@primary, 10%); }
-    &:visited { color:lighten(@primary, 10%); }   /* visited link */  
-    &:hover { color: @primary; }
-    &:active { color: @primary; }
+    &:link { color: @primary; }
+    &:visited { color: @primary; }   /* visited link */  
+    &:hover { color:lighten(@primary, 20%); } 
+    &:active { color:lighten(@primary, 20%); }
   }   
 }
 
@@ -120,6 +120,16 @@ ul {
   max-width: 980px;
   margin: auto;
   padding: 0px 20px;  
+}
+
+ul#newsarticles, ul#courses {
+  margin: 0px;
+  li {
+    background-color: #F2F2F2;
+    padding: 5px 15px 5px 15px;
+    margin-bottom: 5px;
+    .border-radius( 5px );
+  }
 }
 
 

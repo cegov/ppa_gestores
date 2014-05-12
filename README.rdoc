@@ -9,36 +9,25 @@ OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 ---------------------
 TO DO
 
-OK tirar fora barra lateral com notícias
-OK ajustar spans para span12 ou sem span
-
 criar campo imagem em notícia
 criar image picker em notícia
 criar campo default false para notícia em destaque
-
-OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa
-OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: curso
-OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: faq
-OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: newsarticles
+criar toggle no model para que só exista uma notícia em destaque
+validar model para que só exista uma notícia em destaque
 
 fazer galeria de vídeos (usar blueimp)
 tirar obrigatoriedade de se colocar uma data de início e término dos cursos
 tirar obrigatoriedade de se colocar uma data de início e término das notícias/eventos
 
+criar página inicial
 usar boxes como do site brasil.gov.br replicando as seções do site
-
-OK criar página de acessibilidade no servidor de testes
-OK fazer upload da página de acessibilidade
-
-OK BUG botão previsualizar não funciona (courses/3)
 
 OK tratar campos null e blank nas views show de newsarticles
 tratar campos null e blank nas views show de courses
 
 usar jquery para esconder as respostas para as perguntas e mostrar on click
 
-arrumar a lista de notícias, formatação
-
+OK arrumar a lista de notícias, formatação
 a view notícias podia ter um small hermit div nesse formato:
 " por Brasil — publicado 19/06/2013 15:27, última modificação 23/08/2013 14:01 "
 
@@ -55,6 +44,7 @@ verificar possível problema com backup de imagens
 programar a busca? usar solr?
 
 NOT examinar a função justificar no editor
+
 
 ---------------------
 TO implement / fix / etc
@@ -187,3 +177,21 @@ OK programar os atalhos do teclado para que a explicação acima funcione
 OK refatorar a forma como as notícias são pegas, para poder alterar em um ponto o limite do número de artigos
 
 OK criar link no menu acessibilidade no menu:
+
+
+OK tirar fora barra lateral com notícias
+OK ajustar spans para span12 ou sem span
+
+OK fazer layot das index pages de: notícias e cursos
+OK definir uma cor para isso
+OK problema: irá conflitar com as cores de nav-bar? SIM
+
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: curso
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: faq
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: newsarticles
+
+OK criar página de acessibilidade no servidor de testes
+OK fazer upload da página de acessibilidade
+
+OK BUG botão previsualizar não funciona (courses/3)
