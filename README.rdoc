@@ -9,8 +9,8 @@ OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 ---------------------
 TO DO
 
-tirar fora barra lateral com notícias
-ajustar spans para span12 ou sem span
+OK tirar fora barra lateral com notícias
+OK ajustar spans para span12 ou sem span
 
 criar campo imagem em notícia
 criar image picker em notícia
