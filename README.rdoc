@@ -41,7 +41,9 @@ http://refinerycms.com/guides/extending-controllers-with-decorators
 
 ajustar campo resumo na parte administrativa de newsarticles, ver limite de caracteres (255? 128? um tweet?)
 
+OK criado backup do banco de dados do servidor em heroku
 criar um banco pgsql e testar a dump feito no heroku
+verificar possível problema com backup de imagens
 
 programar a busca? usar solr?
 
