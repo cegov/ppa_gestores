@@ -1,15 +1,21 @@
-<div class="span3 well sidebar-nav"">	
-	<%= render '/refinery/show_newsarticle', :newsarticles => @newsarticles %>
-</div>
-<div class="span9">
-  <h2>Cursos</h2>	
-  <ul id="courses">
-    <% @courses.each do |course| %>
-      <li>
-        <%= link_to course.name, refinery.courses_course_path(course) %>
-      </li>
-    <% end %>
-  </ul>
+<div class="not-so-fluid">
+	<div class="container-fluid">
+		<div class="row-fluid">	
+			<div class="span3 well sidebar-nav">	
+				<%= render '/refinery/show_newsarticle', :newsarticles => @newsarticles %>
+			</div>
+			<div class="span9">
+			  <h2>Cursos</h2>	
+			  <ul id="courses">
+			    <% @courses.each do |course| %>
+			      <li>
+			        <%= link_to course.name, refinery.courses_course_path(course) %>
+			      </li>
+			    <% end %>
+			  </ul>
+			</div>
+		</div>
+	</div>
 </div>
 
 

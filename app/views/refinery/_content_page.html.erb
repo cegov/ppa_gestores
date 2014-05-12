@@ -4,16 +4,20 @@
       # :can_use_fallback => !local_assigns[:show_empty_sections] && !local_assigns[:remove_automatic_sections]
     # }) 
 %>
-
-<div class="span3 well sidebar-nav">
-	<%= render '/refinery/show_newsarticle', :newsarticles => @newsarticles %>	
-	<%=raw @page.content_for(:side_body) %>	
-	
+<div class="not-so-fluid">
+	<div class="container-fluid">
+		<div class="row-fluid">	
+			<div class="span3 well sidebar-nav">
+				<%= render '/refinery/show_newsarticle', :newsarticles => @newsarticles %>	
+				<%=raw @page.content_for(:side_body) %>	
+				
+			</div>
+			
+			<div class="span9">
+				<h2><%= @page.title %></h2>
+				<%=raw @page.content_for(:body) %>	
+			</div>
+		</div>
+	</div>
 </div>
-
-<div class="span9">
-	<h2><%= @page.title %></h2>
-	<%=raw @page.content_for(:body) %>	
-</div>
-
 <%= render '/refinery/draft_page_message' unless @page.try(:live?) -%>

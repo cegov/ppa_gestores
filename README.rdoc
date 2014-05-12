@@ -11,7 +11,12 @@ TO DO
 
 tirar fora barra lateral com notícias
 usar boxes como do site brasil.gov.br replicando as seções do site
-limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa
+
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: curso
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: faq
+OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: newsarticles
+
 fazer galeria de vídeos (usar blueimp)
 tirar obrigatoriedade de se colocar uma data de início e término dos cursos
 tirar obrigatoriedade de se colocar uma data de início e término das notícias/eventos
@@ -21,7 +26,7 @@ criar image picker em notícia
 criar campo default false para notícia em destaque
 
 OK criar página de acessibilidade no servidor de testes
-fazer upload da página de acessibilidade
+OK fazer upload da página de acessibilidade
 
 OK BUG botão previsualizar não funciona (courses/3)
 
