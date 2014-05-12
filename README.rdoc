@@ -10,7 +10,11 @@ OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 TO DO
 
 tirar fora barra lateral com notícias
-usar boxes como do site brasil.gov.br replicando as seções do site
+ajustar spans para span12 ou sem span
+
+criar campo imagem em notícia
+criar image picker em notícia
+criar campo default false para notícia em destaque
 
 OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa
 OK limitar (max_width) o conteúdo a +- 960px ou o tamanho do site do ppa no html dos plugins: curso
@@ -21,9 +25,7 @@ fazer galeria de vídeos (usar blueimp)
 tirar obrigatoriedade de se colocar uma data de início e término dos cursos
 tirar obrigatoriedade de se colocar uma data de início e término das notícias/eventos
 
-criar campo imagem em notícia
-criar image picker em notícia
-criar campo default false para notícia em destaque
+usar boxes como do site brasil.gov.br replicando as seções do site
 
 OK criar página de acessibilidade no servidor de testes
 OK fazer upload da página de acessibilidade
