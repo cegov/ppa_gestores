@@ -20,7 +20,7 @@
 			  <% end %>
 			  <% if !@course.description.blank? %>
 				  <section>
-				  	<h3>Descrição:</h3>
+				  	<h4>Descrição:</h4>
 				  	<div>
 					    <p>
 					      <%=raw @course.description %>
@@ -30,10 +30,14 @@
 			  <% end %>	   
 			  <% if !@course.classes_start_on.blank? or !@course.classes_end_on.blank? %>
 				  <section> 
-				  	<h3>Quando será o curso?</h3>
-				  	<% if !@course.classes_start_on.blank? and !@course.classes_end_on.blank? %>    
+				  	<h4>Quando será o curso?</h4>
+				  	<% if (!@course.classes_start_on.blank? and !@course.classes_end_on.blank?) and 
+				  		  (@course.classes_start_on != @course.classes_end_on) 
+				  	%>    
 				    	<p>De <%=raw @course.classes_start_on.strftime("%d/%m/%Y") %> a <%=raw @course.classes_end_on.strftime("%d/%m/%Y") %></p>
-				    <% elsif !@course.classes_start_on.blank? %>
+				    <% elsif (!@course.classes_start_on.blank?) or  
+				    		 (@course.classes_start_on == @course.classes_end_on)
+				    %>
 				    	<p>Início das aulas: <%=raw @course.classes_start_on.strftime("%d/%m/%Y") %></p>
 				    <% elsif !@course.classes_end_on.blank? %>
 				    	<p>Término das aulas: <%=raw @course.classes_end_on.strftime("%d/%m/%Y") %></p>
@@ -42,7 +46,7 @@
 			   <% end %>
 			   <% if !@course.duration.blank? %>
 				  <section>
-				    <h3>Duração do curso:</h3>
+				    <h4>Duração do curso:</h4>
 				    <p><%=raw @course.duration %></p>
 				  </section>
 			   <% end %>

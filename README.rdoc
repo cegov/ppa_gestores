@@ -9,21 +9,21 @@ OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 ---------------------
 TO DO
 
-criar campo imagem em notícia
+OK criar campo imagem em notícia
 criar image picker em notícia
 criar campo default false para notícia em destaque
 criar toggle no model para que só exista uma notícia em destaque
 validar model para que só exista uma notícia em destaque
 
+criar página inicial
+usar boxes como do site brasil.gov.br replicando as seções do site
+
 fazer galeria de vídeos (usar blueimp)
 tirar obrigatoriedade de se colocar uma data de início e término dos cursos
 tirar obrigatoriedade de se colocar uma data de início e término das notícias/eventos
 
-criar página inicial
-usar boxes como do site brasil.gov.br replicando as seções do site
-
 OK tratar campos null e blank nas views show de newsarticles
-tratar campos null e blank nas views show de courses
+OK tratar campos null e blank nas views show de courses
 
 usar jquery para esconder as respostas para as perguntas e mostrar on click
 

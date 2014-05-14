@@ -32,7 +32,7 @@
 
   <div class='field'>
     <%= f.label :event_date -%>
-    <%= f.date_select :event_date -%>
+    <%= f.date_select :event_date, {:include_blank => true, :default => nil} -%>
   </div>
 
   <div class='field'>

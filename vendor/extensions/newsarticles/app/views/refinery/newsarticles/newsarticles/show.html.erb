@@ -15,21 +15,27 @@
 			  <section>
 			    <h2><%=raw @newsarticle.headline %></h2>    
 			  </section>
-			  <section>
-			  	<p class="lead"><i><%=raw @newsarticle.lead %></i></p>
-			  </section>  
-			  <% raw @newsarticle.photo_id %> 
+			  <% if !@newsarticle.lead.blank? %>
+				  <section>
+				  	<p class="lead"><%=raw @newsarticle.lead %></p>
+				  </section>  
+			  <% end %>
+			  <% if !@newsarticle.photo_id.blank? %>
+			  	<% raw @newsarticle.photo_id %>
+			  <% end %> 
 			  <section>    
 			    <p>
 			      <%=raw @newsarticle.story %>
 			    </p>
 			  </section>
-			  <section>
-			    <h1>Data</h1>
-			    <p>
-			      <%=raw @newsarticle.event_date %>
-			    </p>
-			  </section>  
+			  <% if !@newsarticle.event_date.blank? %>
+				  <section>
+				    <h4>Data</h4>
+				    <p>
+				      <%=raw @newsarticle.event_date.strftime("%d/%m/%Y") %>
+				    </p>
+				  </section>
+			  <% end %>  
 			</div>
 		</div>
 	</div>

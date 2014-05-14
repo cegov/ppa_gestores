@@ -30,5 +30,5 @@ pt-BR:
         byline: Autor
         photo: Foto
         story: História ou descrição
-        event_date: Data do evento
+        event_date: Data (apenas se for um evento)
         is_published: Publicado?
