@@ -9,6 +9,8 @@ module Refinery
 
       validates :headline, :presence => true, :uniqueness => true
       
+      belongs_to :photo, :class_name => '::Refinery::Image'
+      
       def self.get_pages_in_menu
         # to use this:  Refinery::Newsarticles::Newsarticle.get_pages_in_menu
         Refinery::Newsarticles::Newsarticle.where(:is_published => true).limit(MAX_NEWSARTICLES_IN_MENU)

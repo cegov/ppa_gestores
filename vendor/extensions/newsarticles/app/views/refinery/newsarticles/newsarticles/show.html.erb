@@ -22,6 +22,7 @@
 			  <% end %>
 			  <% if !@newsarticle.photo_id.blank? %>
 			  	<% raw @newsarticle.photo_id %>
+			  	<%= image_fu @newsarticle.photo, "400x400", class: "image-align-left" %>
 			  <% end %> 
 			  <section>    
 			    <p>

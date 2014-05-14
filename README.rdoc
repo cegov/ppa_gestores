@@ -10,8 +10,13 @@ OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 TO DO
 
 OK criar campo imagem em notícia
-criar image picker em notícia
+
+OK criar image picker em notícia
+
+OK editar view para mostrar a imagem
+
 criar campo default false para notícia em destaque
+
 criar toggle no model para que só exista uma notícia em destaque
 validar model para que só exista uma notícia em destaque
 

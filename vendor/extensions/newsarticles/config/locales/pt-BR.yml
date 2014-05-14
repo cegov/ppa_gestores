@@ -29,6 +29,7 @@ pt-BR:
         lead: Resumo
         byline: Autor
         photo: Foto
+        photo_id: Foto
         story: História ou descrição
         event_date: Data (apenas se for um evento)
         is_published: Publicado?
