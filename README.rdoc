@@ -10,9 +10,7 @@ OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 TO DO
 
 OK criar campo imagem em notícia
-
 OK criar image picker em notícia
-
 OK editar view para mostrar a imagem
 
 criar campo default false para notícia em destaque
