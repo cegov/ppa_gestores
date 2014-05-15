@@ -7,24 +7,33 @@
     <%= f.label :name -%>
     <%= f.text_field :name, :class => 'larger widest' -%>
   </div>
-
-  <div class='field'>
-    <%= f.label :teacher_name -%>
-    <%= f.text_field :teacher_name -%>
-  </div>
-
+    
   <div class='field'>
     <%= f.label :is_active -%>
     <%= f.check_box :is_active, :checked => @course[:is_active] -%>
   </div>
-
+  
+  <div class='field'>
+    <%= f.label :photo -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :photo_id,
+               :image => @course.photo,
+               :toggle_image_display => false %>     	
+  </div>
+  
+  <div class='field'>
+    <%= f.label :teacher_name -%>
+    <%= f.text_field :teacher_name -%>
+  </div>
+  
   <div class='field'>
     <%= render '/refinery/admin/wysiwyg',
                 :f => f,
                 :fields => [:description],
                 :object => "courses/course" -%>
   </div>
-
+  
   <div class='field'>
     <%= f.label :duration -%>
     <%= f.text_field :duration -%>

@@ -4,37 +4,16 @@ OK Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, f
 
 OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 
-
-   
 ---------------------
+
 TO DO
 
-OK criar campo imagem em notícia
-OK criar image picker em notícia
-OK editar view para mostrar a imagem
-
-OK fazer migration criando campo default false para notícia em destaque
-OK criar toggle no model para que só exista um número máximo de notícias(uma) em destaque
-OK validar model para que só exista uma notícia em destaque
-OK criar checkbox para fazer esse toggle na view
-
-OK tirar logo_subordination
-OK título: portal / ppa municipal
-OK fontes 15px;
-OK line-height: 150% para p
-OK h1-h6: 110%
-OK menu não arredondando, mais espaçamento entre os itens do menu
-
-OK prof responsável em itálico
-OK tirar a palavra descrição
-OK colocar hr após descrição
+OK criar campo no bd para foto do curso
+OK criar image picker para o curso
+editar courses#index para mostrar a imagem
 
 criar página inicial
 usar boxes como do site brasil.gov.br replicando as seções do site
-
-criar campo no bd para foto do curso
-criar image picker para o curso
-editar course#show para mostrar a imagem
 
 fazer galeria de vídeos (usar blueimp)
 tirar obrigatoriedade de se colocar uma data de início e término dos cursos
@@ -213,3 +192,23 @@ OK criar página de acessibilidade no servidor de testes
 OK fazer upload da página de acessibilidade
 
 OK BUG botão previsualizar não funciona (courses/3)
+
+OK criar campo imagem em notícia
+OK criar image picker em notícia
+OK editar view para mostrar a imagem
+
+OK fazer migration criando campo default false para notícia em destaque
+OK criar toggle no model para que só exista um número máximo de notícias(uma) em destaque
+OK validar model para que só exista uma notícia em destaque
+OK criar checkbox para fazer esse toggle na view
+
+OK tirar logo_subordination
+OK título: portal / ppa municipal
+OK fontes 15px;
+OK line-height: 150% para p
+OK h1-h6: 110%
+OK menu não arredondando, mais espaçamento entre os itens do menu
+
+OK prof responsável em itálico
+OK tirar a palavra descrição
+OK colocar hr após descrição

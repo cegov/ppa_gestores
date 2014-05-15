@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140514203055) do
+ActiveRecord::Schema.define(:version => 20140515174205) do
 
   create_table "refinery_courses", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20140514203055) do
     t.integer  "position"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "photo_id"
   end
 
   add_index "refinery_courses", ["user_id"], :name => "index_refinery_courses_on_user_id"
