@@ -8,12 +8,12 @@ OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 
 TO DO
 
-OK criar campo no bd para foto do curso
-OK criar image picker para o curso
-editar courses#index para mostrar a imagem
-
 criar página inicial
 usar boxes como do site brasil.gov.br replicando as seções do site
+
+OK criar campo no bd para foto do curso
+OK criar image picker para o curso
+OK editar courses#index para mostrar a imagem
 
 fazer galeria de vídeos (usar blueimp)
 tirar obrigatoriedade de se colocar uma data de início e término dos cursos
@@ -27,10 +27,6 @@ usar jquery para esconder as respostas para as perguntas e mostrar on click
 OK arrumar a lista de notícias, formatação
 a view notícias podia ter um small hermit div nesse formato:
 " por Brasil — publicado 19/06/2013 15:27, última modificação 23/08/2013 14:01 "
-
-fazer a relação dos recursos dos plugins e a class Refinery_User vide:
-http://refinerycms.com/guides/relating-resources-in-an-extension
-http://refinerycms.com/guides/extending-controllers-with-decorators
 
 ajustar campo resumo na parte administrativa de newsarticles, ver limite de caracteres (255? 128? um tweet?)
 
@@ -212,3 +208,7 @@ OK menu não arredondando, mais espaçamento entre os itens do menu
 OK prof responsável em itálico
 OK tirar a palavra descrição
 OK colocar hr após descrição
+
+OK fazer a relação dos recursos dos plugins e a class Refinery_User vide:
+http://refinerycms.com/guides/relating-resources-in-an-extension
+http://refinerycms.com/guides/extending-controllers-with-decorators
