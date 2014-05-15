@@ -15,12 +15,11 @@
 			  <h2><%=raw @course.name %></h2>
 			  <% if !@course.teacher_name.blank? %>
 				  <section>    
-				  	<p>Professor responsável: <%=raw @course.teacher_name %></p>
+				  	<p><i>Professor responsável: <%=raw @course.teacher_name %></i></p>
 				  </section>
 			  <% end %>
 			  <% if !@course.description.blank? %>
-				  <section>
-				  	<h4>Descrição:</h4>
+				  <section>				  	
 				  	<div>
 					    <p>
 					      <%=raw @course.description %>
@@ -28,6 +27,7 @@
 					</div>
 				  </section>
 			  <% end %>	   
+			  <hr />
 			  <% if !@course.classes_start_on.blank? or !@course.classes_end_on.blank? %>
 				  <section> 
 				  	<h4>Quando será o curso?</h4>

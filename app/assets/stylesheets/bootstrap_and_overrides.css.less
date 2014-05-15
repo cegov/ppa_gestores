@@ -32,9 +32,15 @@ body {
 }
 
 body p {
-    font-style: normal;
-    font-weight: 400; /* You specify the number you see next to the fonts to change from light to bold ie you would put 700 etc. etc. */
+  font-style: normal;
+  font-weight: 400; /* You specify the number you see next to the fonts to change from light to bold ie you would put 700 etc. etc. */
+  line-height: 150%;
+  font-size: 15px;  
 }  
+
+h1, h2, h3, h4, h5, h6{
+  line-height: 110%;
+}
 
 /*** ALL-PURPOSE *************************************************/
 
@@ -150,7 +156,8 @@ header {
     &:active {color:darken(@white, 15%);}  /* selected link */
   } 
   #accessibility_menu {
-      padding: 0px 20px 0px 20px;             
+      padding: 0px 20px 0px 20px;
+      margin-bottom: 15px;             
       a {
         &:link {color: @white;}      /* unvisited link */
         &:visited {color: @white;}  /* visited link */  
@@ -211,7 +218,7 @@ header {
   }
   #nav_services {
       div.navbar-inner {
-        
+        border-radius: 0px;
       }
   }  
 }
