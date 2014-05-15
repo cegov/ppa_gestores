@@ -44,7 +44,13 @@
     <%= f.label :is_published -%>
     <%= f.check_box :is_published, :checked => @newsarticle[:is_published] -%>
   </div>
-
+  
+  <div class='field'>
+    <%= f.label :is_a_highlight -%>
+    <%= f.check_box :is_a_highlight, :checked => @newsarticle[:is_a_highlight] -%>
+  </div>  
+  
+  
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
              :delete_title => t('delete', :scope => 'refinery.newsarticles.admin.newsarticles.newsarticle'),

@@ -33,3 +33,4 @@ pt-BR:
         story: História ou descrição
         event_date: Data (apenas se for um evento)
         is_published: Publicado?
+        is_a_highlight: É a notícia em destaque?

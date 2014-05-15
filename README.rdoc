@@ -13,10 +13,18 @@ OK criar campo imagem em notícia
 OK criar image picker em notícia
 OK editar view para mostrar a imagem
 
-criar campo default false para notícia em destaque
+OK fazer migration criando campo default false para notícia em destaque
+OK criar toggle no model para que só exista um número máximo de notícias(uma) em destaque
+OK validar model para que só exista uma notícia em destaque
+criar checkbox para fazer esse toggle na view
 
-criar toggle no model para que só exista uma notícia em destaque
-validar model para que só exista uma notícia em destaque
+tirar logo_subordination
+título: portal / ppa municipal
+fontes 15px;
+line-height: 150% para p
+h1-h6: 110%
+menu não arredondando, mais espaçamento entre os itens do menu
+
 
 criar página inicial
 usar boxes como do site brasil.gov.br replicando as seções do site
