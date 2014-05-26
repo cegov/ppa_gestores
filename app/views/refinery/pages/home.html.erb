@@ -4,28 +4,35 @@
 	<div class="container-fluid">
 		<div class="row-fluid">	
 			<div class="">				
-				<div id="home_news" class="span8">					
+				<div id="home_news" class="span8">	
+									
 					<div id="home_news_box">
-						<div id="news_highlight">
-							<h3><%= @highlight.headline %></h3>
-							<div id="home_highlight_image_box">
-								<% if !@highlight.photo_id.blank? %>
-								
-									<%= link_to refinery.newsarticles_newsarticle_path(@highlight) do %>													  	
-		  								<%= image_fu @highlight.photo, "700x700" %>
-		  							<% end %>
-			  						
-			  					<% end %> 	
-			  					<% if !@highlight.lead.blank? %>			  	
-			  						<p><%= @highlight.lead %></p>
-			  					<% end %>						
+						<% if !@highlight.blank? %>
+							<div id="news_highlight">
+								<h3><%= @highlight.headline %></h3>
+								<div id="home_highlight_image_box">
+									<% if !@highlight.photo_id.blank? %>
+									
+										<%= link_to refinery.newsarticles_newsarticle_path(@highlight) do %>													  	
+			  								<%= image_fu @highlight.photo, "700x700" %>
+			  							<% end %>
+				  						
+				  					<% end %> 	
+				  					<% if !@highlight.lead.blank? %>			  	
+				  						<p><%= @highlight.lead %></p>
+				  					<% end %>						
+								</div>
 							</div>
-						</div>
+						<% end %>
 						<div id="home_recent_news_box">
 							<h5>Outras notícias:</h5>
 							<ul id="home_recent_news">
-								<% @newsarticles.each do |newsarticle| %>							
-									<li><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>							
+								<% if !@newsarticles.blank? %>
+									<% @newsarticles.each do |newsarticle| %>							
+										<li><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>							
+									<% end %>
+								<% else %>
+									<li>Não há notícias: aguarde enquanto colocamos no ar nosso conteúdo</li>
 								<% end %>
 							</ul>
 						</div>
@@ -36,13 +43,13 @@
 					<div id="home_courses_box">						
 						<div id="home_active_courses">
 							<% @courses.each do |course| %>
-						  	  <% if !course.photo_id.blank? and course.is_active? %>
-							   	<div class="course-box">
-							   	  <%= link_to refinery.courses_course_path(course) do %>			        			  	
-							  	  	<%= image_fu(course.photo, "400x400", class: "image-align-left") %>
-							  	  <% end %>					  				        
-							   	</div>
-							  <% end %>
+						  		<% if !course.photo_id.blank? and course.is_active? %>
+								   	<div class="course-box">
+								   	 	<%= link_to refinery.courses_course_path(course) do %>			        			  	
+								  	  		<%= image_fu(course.photo, "400x400", class: "image-align-left") %>
+								  	 	<% end %>					  				        
+								   	</div>
+								<% end %>
 						   	<% end %>
 						</div>
 					</div>
