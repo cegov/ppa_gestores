@@ -8,8 +8,12 @@ OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 
 TO DO
 
-criar página inicial
-usar boxes como do site brasil.gov.br replicando as seções do site
+OK criar página inicial
+OK usar boxes como do site brasil.gov.br replicando as seções do site
+OK BUG: não devemos pegar highlights entre as 9 notícias selecionadas
+tratar nil e blank na página inicial para @highlight e @newsarticles 
+OK tratar highlight sem imagem => não pega se não tiver imagem
+tratar tratar nil e blank para @courses
 
 OK criar campo no bd para foto do curso
 OK criar image picker para o curso

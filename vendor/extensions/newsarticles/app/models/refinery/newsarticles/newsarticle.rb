@@ -7,7 +7,8 @@ module Refinery
       
       self.table_name = 'refinery_newsarticles'      
 
-      attr_accessible :refinery_user_id, :headline, :lead, :byline, :photo_id, :story, :event_date, :is_published, :position
+      attr_accessible :refinery_user_id, :headline, :lead, :byline, 
+        :photo_id, :story, :event_date, :is_published, :position, :is_a_highlight
 
       validates :headline, :presence => true, :uniqueness => true
       after_validation :one_highlight_only
