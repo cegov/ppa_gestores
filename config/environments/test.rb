@@ -36,4 +36,6 @@ PpaGestores::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  
+  Refinery::Core.config.s3_backend = false
 end
