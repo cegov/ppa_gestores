@@ -1,47 +1,25 @@
 DEADLINES
 
 OK Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, ficarão prontas para o dia 10/4.
-
 OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 
 ---------------------
 
 TO DO
 
-OK criar página inicial
-OK usar boxes como do site brasil.gov.br replicando as seções do site
-OK BUG: não devemos pegar highlights entre as 9 notícias selecionadas
-tratar nil e blank na página inicial para @highlight e @newsarticles 
-OK tratar highlight sem imagem => não pega se não tiver imagem
-tratar tratar nil e blank para @courses
-
-OK criar campo no bd para foto do curso
-OK criar image picker para o curso
-OK editar courses#index para mostrar a imagem
-
 fazer galeria de vídeos (usar blueimp)
-tirar obrigatoriedade de se colocar uma data de início e término dos cursos
-tirar obrigatoriedade de se colocar uma data de início e término das notícias/eventos
 
-OK tratar campos null e blank nas views show de newsarticles
-OK tratar campos null e blank nas views show de courses
-
-usar jquery para esconder as respostas para as perguntas e mostrar on click
-
-OK arrumar a lista de notícias, formatação
 a view notícias podia ter um small hermit div nesse formato:
 " por Brasil — publicado 19/06/2013 15:27, última modificação 23/08/2013 14:01 "
 
 ajustar campo resumo na parte administrativa de newsarticles, ver limite de caracteres (255? 128? um tweet?)
 
-OK criado backup do banco de dados do servidor em heroku
 criar um banco pgsql e testar a dump feito no heroku
 verificar possível problema com backup de imagens
 
 programar a busca? usar solr?
 
 NOT examinar a função justificar no editor
-
 
 ---------------------
 TO implement / fix / etc
@@ -216,3 +194,26 @@ OK colocar hr após descrição
 OK fazer a relação dos recursos dos plugins e a class Refinery_User vide:
 http://refinerycms.com/guides/relating-resources-in-an-extension
 http://refinerycms.com/guides/extending-controllers-with-decorators
+
+OK criar página inicial
+OK usar boxes como do site brasil.gov.br replicando as seções do site
+OK BUG: não devemos pegar highlights entre as 9 notícias selecionadas
+OK tratar nil e blank na página inicial para @highlight e @newsarticles 
+OK tratar highlight sem imagem => não pega se não tiver imagem
+OK tratar tratar nil e blank para @courses
+
+OK criar campo no bd para foto do curso
+OK criar image picker para o curso
+OK editar courses#index para mostrar a imagem
+
+OK tirar obrigatoriedade de se colocar uma data de início e término dos cursos
+OK tirar obrigatoriedade de se colocar uma data de início e término das notícias/eventos
+
+OK tratar campos null e blank nas views show de newsarticles
+OK tratar campos null e blank nas views show de courses
+
+OK usar jquery para esconder as respostas para as perguntas e mostrar on click
+
+OK arrumar a lista de notícias, formatação
+
+OK criado backup do banco de dados do servidor em heroku
