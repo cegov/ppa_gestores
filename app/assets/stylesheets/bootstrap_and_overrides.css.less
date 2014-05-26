@@ -90,6 +90,10 @@ h1, h2, h3, h4, h5, h6{
   margin: 20px 0px 20px 0px;
 }
 
+.add-bottom-space {
+  margin-bottom: 25px;
+}
+
 .padded {
   padding: 10px 20px 10px 20px; 
 }
@@ -125,6 +129,14 @@ ul {
     &:hover { color:lighten(@primary, 20%); } 
     &:active { color:lighten(@primary, 20%); }
   }   
+}
+
+a { 
+    text-decoration:none;
+    &:link { color: @primary; }
+    &:visited { color: @primary; }   /* visited link */  
+    &:hover { color:lighten(@primary, 20%); } 
+    &:active { color:lighten(@primary, 20%); }
 }
 
 .not-so-fluid {

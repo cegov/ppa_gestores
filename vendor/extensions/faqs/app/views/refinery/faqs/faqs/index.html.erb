@@ -1,22 +1,27 @@
 <div class="not-so-fluid">
 	<div class="container-fluid">
-		<div class="row-fluid">
-			<!-- 	
-			<div class="span3 well sidebar-nav"">
-				<%= render '/refinery/show_newsarticle', :newsarticles => @newsarticles %>
-			</div>
-			-->
-			<div class="">
-			  <ul id="faqs">
-			    <% @faqs.each do |faq| %>
-			    	 <h3><%=raw faq.question %></h3>
-			    	 <p><%=raw faq.answer %></p>
-			     
-			    	<% #link_to faq.question, refinery.faqs_faq_path(faq) 
-			    	%>			     
-			    <% end %>
-			  </ul>
-			</div>
+		<div class="add-bottom-space">
+			<h2>Perguntas frequentemente feitas (FAQ)</h2>
 		</div>
+		<div class="panel-group" id="accordion">
+			<% @faqs.each_with_index do |faq, index| %>
+			  <div class="panel panel-default">
+			    <div class="panel-heading">
+			      <h4 class="panel-title">
+			        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>">
+			          <%=raw faq.question %>
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapse<%= index %>" 
+			    	class="<%= (index == 0)? 'panel-collapse collapse in' : 'panel-collapse collapse' %>"
+			   	>
+			      <div class="panel-body">
+			        <%=raw faq.answer %>
+			      </div>
+			    </div>
+			  </div>
+			<% end %>
+	   </div>
 	</div>
 </div>

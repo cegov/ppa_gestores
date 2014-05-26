@@ -16,5 +16,12 @@
 //= require_tree .
 
 $(document).ready(function() {
-	HighContrast.init();	
+	HighContrast.init();
+	Accordions.init();		
 });
+
+var Accordions = {
+	init: function(){
+		
+	}
+};
