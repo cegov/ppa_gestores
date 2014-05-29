@@ -19,6 +19,8 @@
 // Glyphicons
 //@import "twitter/bootstrap/sprites.less";
 
+@import "my_mixins";
+
 /*******************************************************************/
 
 
@@ -124,19 +126,19 @@ ul {
   list-style-type: none;  
   li a { 
     text-decoration:none;
-    &:link { color: @primary; }
-    &:visited { color: @primary; }   /* visited link */  
-    &:hover { color:lighten(@primary, 20%); } 
-    &:active { color:lighten(@primary, 20%); }
+    &:link { color: @primary1; }
+    &:visited { color: @primary1; }   /* visited link */  
+    &:hover { color:lighten(@primary1, 20%); } 
+    &:active { color:lighten(@primary1, 20%); }
   }   
 }
 
 a { 
     text-decoration:none;
-    &:link { color: @primary; }
-    &:visited { color: @primary; }   /* visited link */  
-    &:hover { color:lighten(@primary, 20%); } 
-    &:active { color:lighten(@primary, 20%); }
+    &:link { color: @primary1; }
+    &:visited { color: @primary1; }   /* visited link */  
+    &:hover { color:lighten(@primary1, 20%); } 
+    &:active { color:lighten(@primary1, 20%); }
 }
 
 .not-so-fluid {
@@ -148,11 +150,22 @@ a {
 ul#newsarticles, ul#courses, ul#home_recent_news {
   margin: 0px;
   li {
-    background-color: #F2F2F2;
+    background-color: @box-bg-color;
     padding: 10px 20px 10px 20px;
     margin-bottom: 5px;
-    .border-radius( 5px );
-    border-bottom: solid 1px #D4D4D4;
+    .border-radius( 5px );    
+  }
+}
+
+.colored-box {
+  border-top: 2px solid @green;
+  min-height: 40px;
+  background-color: @box-bg-color;
+  h4 {    
+    padding-left: 9px;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
   }
 }
 
@@ -162,8 +175,29 @@ ul#newsarticles, ul#courses, ul#home_recent_news {
 
 header {  
   color: @white; 
-  background-color: @primary;
-  #gradient > .vertical(darken(@primary, 15%), @primary); 
+  background-color: @primary1;
+  #gradient > .vertical(@primary2, lighten(@primary2, 15%)); 
+  
+  .navbar-inner {
+    background-color: @primary1;
+    // #gradient > .vertical(@primary1, lighten(@primary1, 15%)); 
+    background-image: none;
+    background-repeat: repeat-x;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);   
+    
+    
+  }
+  
+  .navbar .nav > li > a {
+    color: @white;
+    .text-shadow(@white-blur);
+    &:link {color: @white !important;}      /* unvisited link */
+    &:visited {color: @white !important;}  /* visited link */  
+    &:hover {color:darken(@white, 15%) !important;}  /* mouse over link */
+    &:active {color:darken(@white, 15%) !important;}  /* selected link */
+  } 
   
   #logo_portal_name a {
     text-decoration:none;
@@ -239,10 +273,16 @@ header {
   }  
 }
 
+#cabecalho {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 /*** BODY ******************************************************/
 
 body {
   background-color: @white;
+  color: @dark-gray;
 }
 #page {
   // padding: 20px;
@@ -256,10 +296,10 @@ body {
 /*** FOOTER ****************************************************/
 
 footer #rodape {
-  
+  margin-top: 25px;
   color: @white;
-  background-color: @primary;
-  #gradient > .vertical(@primary, darken(@primary, 15%));
+  background-color: @primary1;
+  #gradient > .vertical(@primary2, darken(@primary2, 15%));
   
   #footer_links {
     padding-top: 10px;
@@ -289,3 +329,10 @@ ul#courses {
   font-style: italic;
   font-weight: 400;
 }
+
+/*** HOME ******************************************************/
+#home_courses_box {
+  margin-top: 20px;
+}
+
+

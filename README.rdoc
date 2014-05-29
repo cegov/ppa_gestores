@@ -9,6 +9,21 @@ TO DO
 
 fazer galeria de vídeos (usar blueimp)
 
+BUG HOME: puxar cursos na ordem reversa
+BUG HOME: puxar notícias na ordem reversa
+
+OK margin-top 20px no footer
+
+hr apos noticia em destaque
+
+tirar borda da caixa de noticias/etc (flat)
+
+linkar a caixa de notícias e fazer efeito hover nela e não no link
+
+letras menu em bold
+
+header azul (claro / escuro)
+
 a view notícias podia ter um small hermit div nesse formato:
 " por Brasil — publicado 19/06/2013 15:27, última modificação 23/08/2013 14:01 "
 

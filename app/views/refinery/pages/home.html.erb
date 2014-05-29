@@ -4,19 +4,19 @@
 	<div class="container-fluid">
 		<div class="row-fluid">	
 			<div class="">				
-				<div id="home_news" class="span8">	
-									
+				<div id="home_news" class="span8">
+					<div class="colored-box">		
+						<h4>Notícias</h4>	
+					</div>				
 					<div id="home_news_box">
 						<% if !@highlight.blank? %>
 							<div id="news_highlight">
 								<h3><%= @highlight.headline %></h3>
 								<div id="home_highlight_image_box">
-									<% if !@highlight.photo_id.blank? %>
-									
+									<% if !@highlight.photo_id.blank? %>									
 										<%= link_to refinery.newsarticles_newsarticle_path(@highlight) do %>													  	
 			  								<%= image_fu @highlight.photo, "700x700" %>
-			  							<% end %>
-				  						
+			  							<% end %>				  						
 				  					<% end %> 	
 				  					<% if !@highlight.lead.blank? %>			  	
 				  						<p><%= @highlight.lead %></p>
@@ -24,12 +24,13 @@
 								</div>
 							</div>
 						<% end %>
+						<hr />
 						<div id="home_recent_news_box">
 							<h5>Outras notícias:</h5>
 							<ul id="home_recent_news">
 								<% if !@newsarticles.blank? %>
 									<% @newsarticles.each do |newsarticle| %>							
-										<li><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>							
+										<li class="span6"><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>							
 									<% end %>
 								<% else %>
 									<li>Não há notícias: aguarde enquanto colocamos no ar nosso conteúdo</li>
@@ -39,7 +40,9 @@
 					</div>
 				</div>
 				<div id="home_courses" class="span4">
-					<h3>Cursos</h3>
+					<div class="colored-box">
+						<h4>Cursos</h4>
+					</div>
 					<div id="home_courses_box">						
 						<div id="home_active_courses">
 							<% @courses.each do |course| %>
