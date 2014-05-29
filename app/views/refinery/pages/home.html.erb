@@ -29,8 +29,12 @@
 							<h5>Outras notícias:</h5>
 							<ul id="home_recent_news">
 								<% if !@newsarticles.blank? %>
-									<% @newsarticles.each do |newsarticle| %>							
-										<li class="span6"><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>							
+									<% @newsarticles.each_slice(2) do |slice| %>
+										<div class="row-fluid">	
+											<% slice.each do |newsarticle| %> 					
+												<li class="span6"><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>
+											<% end %>
+										</div>						
 									<% end %>
 								<% else %>
 									<li>Não há notícias: aguarde enquanto colocamos no ar nosso conteúdo</li>
