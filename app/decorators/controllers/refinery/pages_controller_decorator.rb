@@ -21,7 +21,8 @@ Refinery::PagesController.class_eval do
       def find_courses
         @courses = Refinery::Courses::Course
           .where(:is_active => true)
-          .where("photo_id IS NOT NULL")          
+          .where("photo_id IS NOT NULL")
+          .order("created_at ASC")          
           .limit(MAX_COURSES_AT_HOME_PAGE)
       end
 end

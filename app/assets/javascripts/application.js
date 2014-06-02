@@ -13,15 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require blueimp-gallery-all
 //= require_tree .
 
 $(document).ready(function() {
 	HighContrast.init();
-	Accordions.init();		
+	BlueImpPlugin.init();		
 });
 
-var Accordions = {
-	init: function(){
-		
-	}
-};
