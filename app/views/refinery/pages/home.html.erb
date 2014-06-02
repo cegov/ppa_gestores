@@ -32,7 +32,12 @@
 									<% @newsarticles.each_slice(2) do |slice| %>
 										<div class="row-fluid">	
 											<% slice.each do |newsarticle| %> 					
-												<li class="span6"><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>
+												<li class="span6">
+													<%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>														
+														<%= newsarticle.headline %>
+													<% end %> - 
+													<span class="date-small"><%= newsarticle.created_at.strftime("%d/%m/%Y") %></span>
+												</li>
 											<% end %>
 										</div>						
 									<% end %>
