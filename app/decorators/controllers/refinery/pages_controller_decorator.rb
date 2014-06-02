@@ -15,7 +15,7 @@ Refinery::PagesController.class_eval do
         @newsarticles = Refinery::Newsarticles::Newsarticle
           .where(:is_a_highlight => false)
           .limit(MAX_NEWS_AT_HOME_PAGE)
-          .order("position DESC")
+          .order("created_at DESC")
       end
       
       def find_courses
