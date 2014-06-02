@@ -15,14 +15,14 @@ Refinery::PagesController.class_eval do
         @newsarticles = Refinery::Newsarticles::Newsarticle
           .where(:is_a_highlight => false)
           .limit(MAX_NEWS_AT_HOME_PAGE)
-          .order("created_at DESC")
+          .order("position DESC")
       end
       
       def find_courses
         @courses = Refinery::Courses::Course
           .where(:is_active => true)
           .where("photo_id IS NOT NULL")
-          .order("created_at ASC")          
+          .order("position ASC")          
           .limit(MAX_COURSES_AT_HOME_PAGE)
       end
 end
