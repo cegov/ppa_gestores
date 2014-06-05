@@ -1,15 +1,14 @@
 DEADLINES
 
-OK Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, ficarão prontas para o dia 10/4.
-OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
+programar a wiki - Agosto
+programar o fórum - Agosto
+programar a busca - Agosto
 
 ---------------------
 
 TO DO
 
 linkar a caixa de notícias e fazer efeito hover nela e não no link
-
-OK header azul (claro / escuro)
 
 a view notícias podia ter um small hermit div nesse formato:
 " por Brasil — publicado 19/06/2013 15:27, última modificação 23/08/2013 14:01 "
@@ -24,8 +23,6 @@ NOT examinar a função justificar no editor
 
 ---------------------
 TO implement / fix / etc
-
-OK Criar páginas Cursos, notícias, eventos e FAQ
 
 O sistema deve previnir que o usuário manipule URLs para chegar a notícias que não foram publicadas
 Criar relação has_many/belong_to entre os recursos criados e refinery_user
@@ -230,3 +227,10 @@ OK tirar borda da caixa de noticias/etc (flat)
 OK letras menu em bold
 
 OK verificar possível problema com backup de imagens
+
+OK Páginas "Sobre" e "Início", editáveis e protegidas com sistema de login, ficarão prontas para o dia 10/4.
+OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
+
+OK header azul (claro / escuro)
+
+OK Criar páginas Cursos, notícias, eventos e FAQ
