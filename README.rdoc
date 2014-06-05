@@ -7,22 +7,9 @@ OK As páginas Cursos, Notícias, Eventos e FAQ ficam prontas para 18/4.
 
 TO DO
 
-fazer galeria de vídeos (usar blueimp)
-
-BUG HOME: puxar cursos na ordem reversa
-BUG HOME: puxar notícias na ordem reversa
-
-OK margin-top 20px no footer
-
-hr apos noticia em destaque
-
-tirar borda da caixa de noticias/etc (flat)
-
 linkar a caixa de notícias e fazer efeito hover nela e não no link
 
-letras menu em bold
-
-header azul (claro / escuro)
+OK header azul (claro / escuro)
 
 a view notícias podia ter um small hermit div nesse formato:
 " por Brasil — publicado 19/06/2013 15:27, última modificação 23/08/2013 14:01 "
@@ -30,7 +17,6 @@ a view notícias podia ter um small hermit div nesse formato:
 ajustar campo resumo na parte administrativa de newsarticles, ver limite de caracteres (255? 128? um tweet?)
 
 criar um banco pgsql e testar a dump feito no heroku
-verificar possível problema com backup de imagens
 
 programar a busca? usar solr?
 
@@ -232,3 +218,15 @@ OK usar jquery para esconder as respostas para as perguntas e mostrar on click
 OK arrumar a lista de notícias, formatação
 
 OK criado backup do banco de dados do servidor em heroku
+
+OK fazer galeria de vídeos (usar blueimp)
+
+OK BUG HOME: puxar cursos na ordem reversa
+OK BUG HOME: puxar notícias na ordem reversa
+
+OK margin-top 20px no footer
+OK hr apos noticia em destaque
+OK tirar borda da caixa de noticias/etc (flat)
+OK letras menu em bold
+
+OK verificar possível problema com backup de imagens
