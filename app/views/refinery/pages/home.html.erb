@@ -33,10 +33,13 @@
 										<div class="row-fluid">	
 											<% slice.each do |newsarticle| %> 					
 												<li class="span6">
+													<div>
+														&nbsp;
+														<span class="date-small pull-right"><%= newsarticle.created_at.strftime("%d/%m/%Y") %></span>
+													</div>
 													<%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>														
 														<%= newsarticle.headline %>
-													<% end %> - 
-													<span class="date-small"><%= newsarticle.created_at.strftime("%d/%m/%Y") %></span>
+													<% end %>												
 												</li>
 											<% end %>
 										</div>						
