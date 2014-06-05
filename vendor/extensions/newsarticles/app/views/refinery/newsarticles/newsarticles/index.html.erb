@@ -16,6 +16,8 @@
 			    <% end %>
 			  </ul>
 			</div>
+			<% will_paginate @news_posts %>
+			<%= will_paginate(@news_posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>
 		</div>
 	</div>
 </div>

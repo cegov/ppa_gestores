@@ -4,6 +4,8 @@ module Refinery
 
       before_filter :find_all_newsarticles
       before_filter :find_page
+      
+      MAX_NEWSARTICLES_PER_PAGE = 20
 
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
@@ -22,7 +24,7 @@ module Refinery
     protected
 
       def find_all_newsarticles
-        @newsarticles = Newsarticle.order('position DESC')
+        @newsarticles = Newsarticle.order('position DESC').page(params[:page]).per_page(MAX_NEWSARTICLES_PER_PAGE)
       end
 
       def find_page
