@@ -28,7 +28,8 @@
 /*** TYPOGRAPHY ****************************************************/
 @font-size-small: 10px;
 
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700"); 
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700,800");
+ 
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -189,6 +190,11 @@ header {
   color: @white; 
   background-color: @primary1;
   #gradient > .vertical(@primary2, lighten(@primary2, 15%)); 
+  
+  #logo_portal_name {
+    font-weight: 800;
+    font-style: bold; 
+  }
   
   .navbar-inner {
     background-color: @primary1;
