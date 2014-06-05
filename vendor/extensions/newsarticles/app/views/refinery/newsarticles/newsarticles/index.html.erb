@@ -7,7 +7,10 @@
 			    <% @newsarticles.each do |newsarticle| %>
 			    	<% if newsarticle.is_published? %>
 				      <li>
-				        <%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %>
+				        <%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>
+				        	<span class="date-small"><%= newsarticle.created_at.strftime("%d/%m/%Y") %> </span> - 
+				        	<%= newsarticle.headline %>
+				        <% end %>
 				      </li>
 				    <% end %>
 			    <% end %>

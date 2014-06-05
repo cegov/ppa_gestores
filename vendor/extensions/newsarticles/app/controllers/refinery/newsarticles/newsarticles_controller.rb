@@ -22,7 +22,7 @@ module Refinery
     protected
 
       def find_all_newsarticles
-        @newsarticles = Newsarticle.order('position ASC')
+        @newsarticles = Newsarticle.order('position DESC')
       end
 
       def find_page
