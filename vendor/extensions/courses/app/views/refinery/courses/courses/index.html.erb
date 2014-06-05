@@ -32,7 +32,10 @@
 				   	</div>
 				  <% end %>
 			   	<% end %>
-			  </section>			  
+			  </section>
+			  <div class="pagination">
+			  	<%= will_paginate(@courses, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+			  </div>			  
 			</div>
 		</div>
 	</div>
