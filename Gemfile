@@ -10,8 +10,10 @@ gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-rails', '~> 1.1.0'  
 # integrate bundler with capistrano
 gem 'capistrano-bundler'  
+
+gem 'capistrano-rvm'
+
 # Use the Unicorn app server
-gem 'unicorn'  
 gem 'fog'  
 
 group :development, :test do
@@ -20,9 +22,10 @@ group :development, :test do
   gem 'mysql2'  
 end
 
-group :production do
+group :production do  
   gem 'pg'
-  gem 'rails_12factor' 
+  gem 'rails_12factor'
+  gem 'unicorn'   
 end
 
 # Gems used only for assets and not required
