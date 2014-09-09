@@ -5,17 +5,24 @@ gem 'rails', '3.2.17'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'thin'
+gem 'capistrano', '~> 3.1.0'
+# rails specific capistrano funcitons
+gem 'capistrano-rails', '~> 1.1.0'  
+# integrate bundler with capistrano
+gem 'capistrano-bundler'  
+# Use the Unicorn app server
+gem 'unicorn'  
+gem 'fog'  
 
 group :development, :test do
+  gem 'thin'
   # gem 'sqlite3'
   gem 'mysql2'  
 end
 
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
-  gem 'fog'  
+  gem 'rails_12factor' 
 end
 
 # Gems used only for assets and not required
