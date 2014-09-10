@@ -3,7 +3,8 @@ set :deploy_user, 'inde'
 
 # setup repo details
 set :scm, :git
-set :repo_url, 'git@github.com:euomarcelo/ppa_gestores.git'
+# set :repo_url, 'git@github.com:euomarcelo/ppa_gestores.git'
+set :repo_url, 'https://github.com/euomarcelo/ppa_gestores.git'
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 
 # setup rbenv
