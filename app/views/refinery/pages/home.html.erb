@@ -1,75 +1,78 @@
-<% render '/refinery/content_page' %>
-
-<div class="not-so-fluid">
-	<div class="container-fluid">
-		<div class="row-fluid">	
-			<div class="">				
-				<div id="home_news" class="span8">
-					<div class="colored-box">		
-						<h4>Notícias</h4>	
-					</div>				
-					<div id="home_news_box">
-						<% if !@highlight.blank? %>
-							<div id="news_highlight">
-								<h3><%= @highlight.headline %></h3>
-								<div id="home_highlight_image_box">
-									<% if !@highlight.photo_id.blank? %>									
-										<%= link_to refinery.newsarticles_newsarticle_path(@highlight) do %>													  	
-			  								<%= image_fu @highlight.photo, "700x700" %>
-			  							<% end %>				  						
-				  					<% end %> 	
-				  					<% if !@highlight.lead.blank? %>			  	
-				  						<p><%= @highlight.lead %></p>
-				  					<% end %>						
+<% content_for :body do %>
+	<div class="">
+		<div class="">			
+			<div class="row-fluid">	
+				<div class="">									
+					<div id="home_news" class="">
+						<div class="colored-box">		
+							<h4>Notícias</h4>	
+						</div>				
+						<div id="home_news_box">
+							<% if !@highlight.blank? %>
+								<div id="news_highlight">
+									<h3><%= @highlight.headline %></h3>
+									<div id="home_highlight_image_box">
+										<% if !@highlight.photo_id.blank? %>									
+											<%= link_to refinery.newsarticles_newsarticle_path(@highlight) do %>													  	
+				  								<%= image_fu @highlight.photo, "700x700" %>
+				  							<% end %>				  						
+					  					<% end %> 	
+					  					<% if !@highlight.lead.blank? %>			  	
+					  						<p><%= @highlight.lead %></p>
+					  					<% end %>						
+									</div>
+								</div>
+							<% end %>							
+							<div id="home_recent_news_box">
+								<h5>Outras notícias:</h5>
+								<ul id="home_recent_news">
+									<% if !@newsarticles.blank? %>
+										<% @newsarticles.each_slice(3) do |slice| %>
+											<div class="row-fluid">	
+												<% slice.each do |newsarticle| %> 					
+													<li class="span4 home_recent_news_box">
+														<div>
+															&nbsp;
+															<span class="date-small pull-right"><%= newsarticle.created_at.strftime("%d/%m/%Y") %></span>
+														</div>
+														<%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>														
+															<%= newsarticle.headline %>
+														<% end %>												
+													</li>
+												<% end %>
+											</div>						
+										<% end %>
+									<% else %>
+										<li>Não há notícias: aguarde enquanto colocamos no ar nosso conteúdo</li>
+									<% end %>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="home_courses" class="">
+						<div class="colored-box">
+							<h4>Cursos</h4>
+						</div>
+						<div id="home_courses_box">						
+							<div id="home_active_courses">
+								<div class="row-fluid">
+									<% @courses.each do |course| %>										
+								  		<% if !course.photo_id.blank? and course.is_active? %>
+										   	<div class="course-box span4">
+										   	 	<%= link_to refinery.courses_course_path(course) do %>			        			  	
+										  	  		<%= image_fu(course.photo, "400x400", class: "image-align-left") %>
+										  	 	<% end %>					  				        
+										   	</div>
+										<% end %>
+								   	<% end %>
 								</div>
 							</div>
-						<% end %>
-						<hr />
-						<div id="home_recent_news_box">
-							<h5>Outras notícias:</h5>
-							<ul id="home_recent_news">
-								<% if !@newsarticles.blank? %>
-									<% @newsarticles.each_slice(2) do |slice| %>
-										<div class="row-fluid">	
-											<% slice.each do |newsarticle| %> 					
-												<li class="span6">
-													<div>
-														&nbsp;
-														<span class="date-small pull-right"><%= newsarticle.created_at.strftime("%d/%m/%Y") %></span>
-													</div>
-													<%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>														
-														<%= newsarticle.headline %>
-													<% end %>												
-												</li>
-											<% end %>
-										</div>						
-									<% end %>
-								<% else %>
-									<li>Não há notícias: aguarde enquanto colocamos no ar nosso conteúdo</li>
-								<% end %>
-							</ul>
 						</div>
-					</div>
+					</div>	
 				</div>
-				<div id="home_courses" class="span4">
-					<div class="colored-box">
-						<h4>Cursos</h4>
-					</div>
-					<div id="home_courses_box">						
-						<div id="home_active_courses">
-							<% @courses.each do |course| %>
-						  		<% if !course.photo_id.blank? and course.is_active? %>
-								   	<div class="course-box">
-								   	 	<%= link_to refinery.courses_course_path(course) do %>			        			  	
-								  	  		<%= image_fu(course.photo, "400x400", class: "image-align-left") %>
-								  	 	<% end %>					  				        
-								   	</div>
-								<% end %>
-						   	<% end %>
-						</div>
-					</div>
-				</div>	
 			</div>
 		</div>
 	</div>
-</div>
+<% end %>
+
+<%= render '/refinery/content_page' %>
