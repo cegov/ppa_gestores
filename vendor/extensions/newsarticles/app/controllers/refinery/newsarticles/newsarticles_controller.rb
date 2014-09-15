@@ -3,7 +3,7 @@ module Refinery
     class NewsarticlesController < ::ApplicationController
 
       before_filter :find_all_newsarticles
-      before_filter :find_page
+      before_filter :find_page     
       
       MAX_NEWSARTICLES_PER_PAGE = 20
 

@@ -4,6 +4,9 @@
       # :can_use_fallback => !local_assigns[:show_empty_sections] && !local_assigns[:remove_automatic_sections]
     # }) 
 %>
+<pre>
+	<%= @sobre.inspect %>
+</pre>
 <div class="not-so-fluid">
 	<div class="container-fluid">
 		<div class="row-fluid">	
@@ -17,9 +20,15 @@
 						<h4>Geral</h4>											
 					</div>
 					<ul>
-						<li><%= link_to @sobre.title.downcase, @sobre.url if !@sobre.nil? %></li>
-						<li><%= link_to "Notícias".downcase, newsarticles_newsarticles_url %></li>
-						<li><%= link_to "Eventos".downcase, events_newsarticles_newsarticles_url %></li>
+						<li><%= # link_to @sobre.title.downcase, @sobre.url if !@sobre.nil? 
+						%></li>
+						<li><%= # link_to "Notícias".downcase, newsarticles_newsarticles_url 
+						%></li>
+						<li><%= # link_to "Eventos".downcase, events_newsarticles_newsarticles_url 
+						%></li>
+						<li><a href="/sobre">sobre</a></li>
+						<li><a href="/newsarticles">notícias</a></li>
+						<li><a href="/courses">sobre</a></li>
 					</ul>	
 				</div>
 				<% 

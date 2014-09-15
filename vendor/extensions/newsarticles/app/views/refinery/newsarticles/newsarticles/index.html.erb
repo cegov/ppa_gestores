@@ -1,22 +1,26 @@
-<div class="not-so-fluid">
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="">
-			  <h2>Eventos e notícias</h2>
-			  <ul id="newsarticles">
-			    <% @newsarticles.each do |newsarticle| %>
-			    	<% if newsarticle.is_published? %>
-				      <li>
-				        <%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>
-				        	<span class="date-small"><%= newsarticle.created_at.strftime("%d/%m/%Y") %> </span> - 
-				        	<%= newsarticle.headline %>
-				        <% end %>
-				      </li>
+<% content_for :body do %>
+	<div class="not-so-fluid">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="">
+				  <h2>Eventos e notícias</h2>
+				  <ul id="newsarticles">
+				    <% @newsarticles.each do |newsarticle| %>
+				    	<% if newsarticle.is_published? %>
+					      <li>
+					        <%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>
+					        	<span class="date-small"><%= newsarticle.created_at.strftime("%d/%m/%Y") %> </span> - 
+					        	<%= newsarticle.headline %>
+					        <% end %>
+					      </li>
+					    <% end %>
 				    <% end %>
-			    <% end %>
-			  </ul>
+				  </ul>
+				</div>
+				<%= will_paginate(@news_posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>
 			</div>
-			<%= will_paginate(@news_posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>
 		</div>
 	</div>
-</div>
+<% end %>
+
+<%= render '/refinery/content_page' %>
