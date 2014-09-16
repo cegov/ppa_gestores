@@ -38,7 +38,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer'  
   gem 'less-rails'
-  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+  gem 'twitter-bootstrap-rails', "2.2.8" #:git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'bootstrap-addons-rails'  
   gem 'uglifier', '>= 1.0.3'
 end
