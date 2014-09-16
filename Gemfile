@@ -5,13 +5,16 @@ gem 'rails', '3.2.17'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'capistrano', '~> 3.1.0'
-# rails specific capistrano funcitons
-gem 'capistrano-rails', '~> 1.1.0'  
-# integrate bundler with capistrano
-gem 'capistrano-bundler'  
 
-gem 'capistrano-rvm'
+# Deploy with Capistrano
+gem 'capistrano', '< 3.0'
+# gem 'capistrano', '~> 3.1.0'
+# # rails specific capistrano funcitons
+# gem 'capistrano-rails', '~> 1.1.0'  
+# # integrate bundler with capistrano
+# gem 'capistrano-bundler'  
+# 
+# gem 'capistrano-rvm'
 
 # Use the Unicorn app server
 gem 'fog'  
@@ -50,9 +53,6 @@ gem 'jquery-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'

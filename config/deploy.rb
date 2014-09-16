@@ -1,104 +1,123 @@
-set :application, 'ppagestores'
-set :deploy_user, 'inde'
+require "bundler/capistrano"
+require 'rvm/capistrano'
 
-# setup repo details
+set :application, "ppagestores"
+
+set :deploy_to, "/var/www/ppagestores"
+set :branch, "master"
+
+# set :repository,  "git@github.com:itsme/#{application}.git"         # não quero usar o github
+set :repository, "."
+set :local_repository, "."              # eu tirei essa linha fora, mas pode ser que precise
+
 set :scm, :git
-# set :repo_url, 'git@github.com:euomarcelo/ppa_gestores.git'
-set :repo_url, 'https://github.com/euomarcelo/ppa_gestores.git'
-set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 
-# setup rbenv
-# set :rbenv_type, :system
-# set :rbenv_ruby, '2.1.1'
-# set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-# set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+# set :deploy_via, :remote_cache                 # esse era o default 
+set :deploy_via, :copy                          # a ideia é não usar um host remoto
+set :copy_cache, true                         # tentativa de otimizar o deploy
+set :copy_exclude, [".git", "private/*", "log/*", ".bundle", "tmp/*", "spec", "test"] 
 
-# deploy.rb or stage file (staging.rb, production.rb or else)
-set :rvm_type, :user                     # Defaults to: :auto
-set :rvm_ruby_version, '2.0.0-p451'      # Defaults to: 'default'
+server "189.9.150.184", :web, :app, :db, primary: true
+set :port, 22
 
-# how many old releases do we want to keep
-set :keep_releases, 5
+set :user, "inde"
+set :use_sudo, true
 
-# files we want symlinking to specific entries in shared.
-set :linked_files, %w{config/database.yml}
+default_run_options[:pty] = true
+ssh_options[:forward_agent] = true # essa linha pode ter de ser apagada para não pedir password
 
-# dirs we want symlinking to shared
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
-# what specs should be run before deployment is allowed to
-# continue, see lib/capistrano/tasks/run_tests.cap
-set :tests, []
-
-# which config files should be copied by deploy:setup_config
-# see documentation in lib/capistrano/tasks/setup_config.cap
-# for details of operations
-set(:config_files, %w(
-  nginx.conf
-  database.example.yml
-  log_rotation
-  monit
-  unicorn.rb
-  unicorn_init.sh
-))
-
-# which config files should be made executable after copying
-# by deploy:setup_config
-set(:executable_config_files, %w(
-  unicorn_init.sh
-))
-
-# files which need to be symlinked to other parts of the
-# filesystem. For example nginx virtualhosts, log rotation
-# init scripts etc.
-set(:symlinks, [
-  {
-    source: "nginx.conf",
-    link: "/etc/nginx/sites-enabled/#{fetch(:full_app_name)}"
-  },
-  {
-    source: "unicorn_init.sh",
-    link: "/etc/init.d/unicorn_#{fetch(:full_app_name)}"
-  },
-  {
-    source: "log_rotation",
-   link: "/etc/logrotate.d/#{fetch(:full_app_name)}"
-  },
-  # {
-    # source: "monit",
-    # link: "/etc/monit.d/#{fetch(:full_app_name)}.conf"
-  # }
-])
-
-# set :pty, true
-
-# this:
-# http://www.capistranorb.com/documentation/getting-started/flow/
-# is worth reading for a quick overview of what tasks are called
-# and when for `cap stage deploy`
+after "deploy", "deploy:cleanup"
 
 namespace :deploy do
-  # make sure we're deploying what we think we're deploying
-  before :deploy, "deploy:check_revision"
-  # only allow a deploy with passing tests to deployed
-  before :deploy, "deploy:run_tests"
-  # compile assets locally then rsync
-  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
-  after :finishing, 'deploy:cleanup'
+  %w[start stop restart].each do |command|
+    desc "#{command} unicorn server"
+    task command, roles: :app, except: {no_release: true} do
+      run "/etc/init.d/unicorn_#{application} #{command}"
+    end
+  end
 
-  # remove the default nginx configuration as it will tend
-  # to conflict with our configs.
-  before 'deploy:setup_config', 'nginx:remove_default_vhost'
+  task :setup_config, roles: :app do
+    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
+    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+    run "mkdir -p #{shared_path}/private && chmod 755 #{shared_path}/private"
+    # put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
+    # puts "Now edit the config files in #{shared_path}."
+  end
+  after "deploy:setup", "deploy:setup_config"
 
-  # reload nginx to it will pick up any modified vhosts from
-  # setup_config
-  after 'deploy:setup_config', 'nginx:reload'
+  task :symlink_config, roles: :app do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    # run "ln -nfs #{shared_path}/private #{release_path}/private"
+  end
+  after "deploy:finalize_update", "deploy:symlink_config"
 
-  # Restart monit so it will pick up any monit configurations
-  # we've added
-  # after 'deploy:setup_config', 'monit:restart'
-
-  # As of Capistrano 3.1, the `deploy:restart` task is not called
-  # automatically.
-  after 'deploy:publishing', 'deploy:restart'
+  desc "Make sure local git is in sync with remote."
+  task :check_revision, roles: :web do
+    unless `git rev-parse HEAD` == `git rev-parse origin/master`
+      puts "WARNING: HEAD is not the same as origin/master"
+      puts "Run `git push` to sync changes."
+      exit
+    end
+  end
+  desc "reload the database with seed data"
+  task :seed do    
+    run "cd #{current_path} && bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+  end  
+  # before "deploy", "deploy:check_revision"
 end
+
+# set :application, "set your application name here"
+# set :repository,  "set your repository location here"
+# 
+# # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
+# # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+# 
+# role :web, "your web-server here"                          # Your HTTP server, Apache/etc
+# role :app, "your app-server here"                          # This may be the same as your `Web` server
+# role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
+# role :db,  "your slave db-server here"
+
+# if you want to clean up old releases on each deploy uncomment this:
+# after "deploy:restart", "deploy:cleanup"
+
+# if you're still using the script/reaper helper you will need
+# these http://github.com/rails/irs_process_scripts
+
+# If you are using Passenger mod_rails uncomment this:
+# namespace :deploy do
+#   task :start do ; end
+#   task :stop do ; end
+#   task :restart, :roles => :app, :except => { :no_release => true } do
+#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+#   end
+# end
+
+
+##########################################################################
+# original file goes below:
+
+# set :application, "set your application name here"
+# set :repository,  "set your repository location here"
+
+# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
+# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+
+# role :web, "your web-server here"                          # Your HTTP server, Apache/etc
+# role :app, "your app-server here"                          # This may be the same as your `Web` server
+# role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
+# role :db,  "your slave db-server here"
+
+# if you want to clean up old releases on each deploy uncomment this:
+# after "deploy:restart", "deploy:cleanup"
+
+# if you're still using the script/reaper helper you will need
+# these http://github.com/rails/irs_process_scripts
+
+# If you are using Passenger mod_rails uncomment this:
+# namespace :deploy do
+#   task :start do ; end
+#   task :stop do ; end
+#   task :restart, :roles => :app, :except => { :no_release => true } do
+#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+#   end
+# end
