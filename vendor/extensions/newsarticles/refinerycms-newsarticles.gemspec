@@ -1,6 +1,7 @@
 # Encoding: UTF-8
 
 Gem::Specification.new do |s|
+  s.author            = "Marcelo Eduardo Cardoso"
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-newsarticles'
   s.version           = '1.0'
