@@ -2,11 +2,11 @@ PpaGestores::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
-  config.cache_classes = false # changed on 18/09
+  config.cache_classes = true # changed on 18/09
 
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
-  config.action_controller.perform_caching = false # changed on 18/09
+  config.action_controller.perform_caching = true # changed on 18/09
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
