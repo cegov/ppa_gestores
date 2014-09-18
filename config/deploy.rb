@@ -64,6 +64,10 @@ namespace :deploy do
     run "cd #{current_path} && bundle exec rake db:seed RAILS_ENV=#{rails_env}"
   end  
   # before "deploy", "deploy:check_revision"
+  task :cleanup, :except => {:no_release => true} do
+    count = fetch(:keep_releases, 5).to_i
+    run "ls -1dt #{releases_path}/* | tail -n +#{count + 1} | #{try_sudo} xargs rm -rf"
+  end
 end
 
 # set :application, "set your application name here"
