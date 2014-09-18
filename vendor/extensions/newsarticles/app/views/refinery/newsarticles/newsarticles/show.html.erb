@@ -1,43 +1,45 @@
-<div class="not-so-fluid">
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<!--
-			<div class="span3 well sidebar-nav">	
-				<ul class="nav nav-list">			
-					<li class="nav-header">Notícias:</li>
-					<% @newsarticles.each do |newsarticle| %>
-						<li><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>
-					<% end %>  
-				</ul>
-			</div>
-			-->
+<% content_for :body do %>
+	<div class="">
+		<div class="">
 			<div class="">
-			  <section>
-			    <h2><%=raw @newsarticle.headline %></h2>    
-			  </section>
-			  <% if !@newsarticle.lead.blank? %>
+				<!--
+				<div class="span3 well sidebar-nav">	
+					<ul class="nav nav-list">			
+						<li class="nav-header">Notícias:</li>
+						<% @newsarticles.each do |newsarticle| %>
+							<li><%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %></li>
+						<% end %>  
+					</ul>
+				</div>
+				-->
+				<div class="">
 				  <section>
-				  	<p class="lead"><%=raw @newsarticle.lead %></p>
-				  </section>  
-			  <% end %>
-			  <% if !@newsarticle.photo_id.blank? %>			  	
-			  	<%= image_fu @newsarticle.photo, "400x400", class: "image-align-left" %>
-			  <% end %> 
-			  <section>    
-			    <p>
-			      <%=raw @newsarticle.story %>
-			    </p>
-			  </section>
-			  <% if !@newsarticle.event_date.blank? %>
-				  <section>
-				    <h4>Data</h4>
+				    <h2><%=raw @newsarticle.headline %></h2>    
+				  </section>
+				  <% if !@newsarticle.lead.blank? %>
+					  <section>
+					  	<p class="lead"><%=raw @newsarticle.lead %></p>
+					  </section>  
+				  <% end %>
+				  <% if !@newsarticle.photo_id.blank? %>			  	
+				  	<%= image_fu @newsarticle.photo, "400x400", class: "image-align-left" %>
+				  <% end %> 
+				  <section>    
 				    <p>
-				      <%=raw @newsarticle.event_date.strftime("%d/%m/%Y") %>
+				      <%=raw @newsarticle.story %>
 				    </p>
 				  </section>
-			  <% end %>  
+				  <% if !@newsarticle.event_date.blank? %>
+					  <section>
+					    <h4>Data</h4>
+					    <p>
+					      <%=raw @newsarticle.event_date.strftime("%d/%m/%Y") %>
+					    </p>
+					  </section>
+				  <% end %>  
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-			
+<% end %>
+<%= render '/refinery/content_page' %>
