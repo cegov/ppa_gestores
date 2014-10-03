@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery except: :verify_user
+  before_filter :get_courses
   
   def verify_user
     username = params['refinery_user']['username']
@@ -11,4 +12,13 @@ class ApplicationController < ActionController::Base
       head :bad_request
     end
   end
+  
+  def get_courses
+    @courses = Refinery::Courses::Course
+          .where(:is_active => true)
+          .where("photo_id IS NOT NULL")
+          .order("position ASC")          
+          .limit(MAX_COURSES_AT_HOME_PAGE) 
+  end
+  
 end
