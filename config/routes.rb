@@ -7,6 +7,8 @@ PpaGestores::Application.routes.draw do
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
   mount Refinery::Core::Engine, :at => '/'
   root :to => 'pages#home'
+  
+  post '/HVeuYIV2hRt6ShqGDMH32jOneJOeRU7/verify', :to => 'application#verify_user'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
