@@ -17,7 +17,10 @@ gem 'capistrano', '< 3.0'
 # gem 'capistrano-rvm'
 
 # Use the Unicorn app server
-gem 'fog'  
+gem 'fog'
+
+# solr fulltext search
+gem 'sunspot_rails', '~> 1.3.0'  
 
 group :development, :test do
   gem 'thin'

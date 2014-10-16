@@ -24,9 +24,10 @@
 	</div>	
 	<div id="logo_bar" class="container-fluid">
 		<div class="row-fluid">
-			<div id="logo" class="span6">
-				<h5 id="logo_denomination">Portal</h5>
-				<h1 id="logo_portal_name"><%= link_to Refinery::Core.site_name, refinery.root_path %></h1>				
+			<div id="logo" class="span6">				
+				<%= link_to(refinery.root_path, title: 'Início') do %>
+					<%= image_tag "logo.png", alt: "Logo" %>
+				<% end %>				
 			</div>
 			<div id="busca_e_social" class="span6">
 				<div class="vertical-aligned">
