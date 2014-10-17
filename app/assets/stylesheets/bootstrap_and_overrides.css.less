@@ -450,10 +450,29 @@ ul#courses {
 }  
 
 /*** NEWS ******************************************************/
-.lead {
-  font-size: 16px;
-  font-style: italic;
-  font-weight: 400;
+section.news_title_and_lead {
+  #news_title {
+    margin-bottom: 25px;
+    font-size: 34px;
+    line-height: 37px;
+  }
+  .lead {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
+}
+
+section.news_authorship {
+  p { 
+    font-size: 12px;
+  }
+  p.news-published {
+    margin-bottom: 0px;
+  }
 }
 
 /*** HOME ******************************************************/
@@ -478,17 +497,18 @@ ul#courses {
         font-weight: normal;
       }
     }
-  }   
-  #home_news_sidebar { 
-    div#home_news_interaction {
-      a.interaction_link {
-        display: block;
-        margin-bottom: 25px;
-        img.interaction_img {
-          
-        }
+  }  
+}
+#home_news_sidebar { 
+  div#home_news_interaction {
+    a.interaction_link {
+      display: block;
+      margin-bottom: 25px;
+      img.interaction_img {
+        
       }
     }
   }
 }
+
 

@@ -13,4 +13,6 @@
 
 <%= javascript_include_tag 'modernizr-min' %>
 
-<script defer="defer" async="async" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>
+<% if Rails.env.production? %>
+	<script defer="defer" async="async" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>
+<% end %>

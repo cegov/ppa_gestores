@@ -1,7 +1,7 @@
 <% content_for :body do %>
-	<div class="">
+	<div class="row-fluid">
 		<div class="">
-			<div class="">
+			<div class="span8">
 				<div class="">
 				  <h2>Notícias</h2>
 				  <div id="newsarticles">
@@ -24,6 +24,9 @@
 				</div>
 				<%= will_paginate(@news_posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>
 			</div>
+			<div id="home_news_sidebar" class="span4">
+				<%= render 'refinery/pages/home_news_sidebar' %>
+			</div>			
 		</div>
 	</div>
 <% end %>
