@@ -5,18 +5,16 @@
 		</div>				
 		<div id="home_news_box">
 			<% if !@highlight.blank? %>
-				<div id="news_highlight">
-					
+				<div id="news_highlight">					
 					<div id="home_highlight_image_box">
 						<% if !@highlight.photo_id.blank? %>									
 							<%= link_to refinery.newsarticles_newsarticle_path(@highlight) do %>													  	
 								<%= image_fu @highlight.photo, "700x700" %>
 							<% end %>				  						
-	  					<% end %>
-	  					
-	  					<h3><%= @highlight.headline %></h3> 	
+	  					<% end %>	  					
+	  					<h2 class="news-headline"><%= @highlight.headline %></h2> 	
 	  					<% if !@highlight.lead.blank? %>			  	
-	  						<h5><%= @highlight.lead %></h5>
+	  						<h5 class="news-highlight"><%= @highlight.lead %></h5>
 	  					<% end %>						
 					</div>
 				</div>

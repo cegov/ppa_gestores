@@ -185,11 +185,28 @@ ul#home_recent_news li {
   }
 }
 // for date in newsarticles list on home page 
-.date-small {
-  font-style:italic;
-  font-size: 12px;
-  
+
+
+div#newsarticles div.newsarticle_box {
+  div.newsarticle_date {
+    height: 20px;
+    padding: 0px;
+    margin-bottom:10px;
+    text-align: middle;    
+    .date-small {
+      font-style: normal;
+      font-size: 12px;
+      padding-left: 5px;
+      position: relative;
+      top: 1px;      
+    }
+    img.cal-icon {
+      height: 14px;
+      width: 14px;
+    }
+  }
 }
+
 
 
 /*** HEADER ********************************************************/
@@ -199,6 +216,7 @@ header {
   color: @white; 
   background-color: @primary1;
   #gradient > .vertical(@primary1, @primary2); 
+  margin-bottom: 55px;
   
   #logo_portal_name {
     font-weight: 800;
@@ -382,12 +400,13 @@ footer {
       background-color: none;
       div.footer-link-box {
         min-height: 100px;        
-        border-left: 3px solid @white;
+        border-left: 3px dotted @white;
         padding-left: 15px;
         padding-bottom: 15px;  
         h2 {
           font-weight: normal;
           font-size: 20px; 
+          font-style: bold;
         }
         a {
           text-decoration:none;
@@ -439,13 +458,26 @@ ul#courses {
 
 /*** HOME ******************************************************/
 #home_courses_box {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
-
 #home_news {
-  #home_news_highlight div#home_news_box div#news_highlight div#home_highlight_image_box {
-    margin-top: 20px;
+  #home_news_highlight div#home_news_box { 
+    div#news_highlight div#home_highlight_image_box {
+      margin-top: 10px;
+      h2.news-headline {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 34px;
+        font-weight: bold;  
+        margin-bottom: 0px;            
+      }
+      h5.news-highlight {
+        margin-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+      }
+    }
   }   
   #home_news_sidebar { 
     div#home_news_interaction {

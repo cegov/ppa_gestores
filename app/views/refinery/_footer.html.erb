@@ -2,13 +2,27 @@
 		<div class="not-so-fluid">
 			<div id="footer_links" class="container-fluid">
 				<div class="row-fluid">
-					<div class="span2 footer-link-box">
+					<div class="span3 footer-link-box">
 						<%= content_tag(:h2, "GERAL") %>
 						<ul>							
 							<li><a href="/sobre">sobre</a></li>
 							<li><a href="/newsarticles">notícias</a></li>
 							<li><a href="/courses">cursos</a></li>							
 						</ul>
+					</div>
+					<div class="span3 footer-link-box">
+						<%= content_tag(:h2, "INSTRUMENTOS") %>
+						<ul>		
+							<li><a href="#">wiki</a></li>
+							<li><a href="#">fórum</a></li>
+						</ul>	
+					</div>		
+					<div class="span3 footer-link-box">						
+						<%= content_tag(:h2, "LINKS") %>
+						<ul>		
+							<li><a href="#">biblioteca digital de des.</a></li>
+							<li><a href="#">app mais brasil</a></li>
+						</ul>	
 					</div>
 					<div class="span3 footer-link-box">						
 						<%= content_tag(:h2, "CURSO EAD EM PLANEJ. ESTRAT.") %>		
@@ -17,13 +31,6 @@
 								<li><%= link_to course.name.downcase, refinery.courses_course_path(course) %></li>
 							<% end %>							
 						</ul>				
-					</div>
-					<div class="span3 footer-link-box">						
-						<%= content_tag(:h2, "CENTRAL DE CONTEÚDO") %>
-						<ul>		
-							<li><a href="#">wiki</a></li>
-							<li><a href="#">fórum</a></li>
-						</ul>	
 					</div>
 				</div>
 			</div>					

@@ -3,19 +3,24 @@
 		<div class="">
 			<div class="">
 				<div class="">
-				  <h2>Eventos e notícias</h2>
-				  <ul id="newsarticles">
+				  <h2>Notícias</h2>
+				  <div id="newsarticles">
 				    <% @newsarticles.each do |newsarticle| %>
 				    	<% if newsarticle.is_published? %>
-					      <li>
-					        <%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>
-					        	<span class="date-small"><%= newsarticle.created_at.strftime("%d/%m/%Y") %> </span> - 
-					        	<%= newsarticle.headline %>
-					        <% end %>
-					      </li>
+					      <div class="newsarticle_box">
+					      	<div class="newsarticle_date">
+					      		<%= image_tag "cal_icon.png", alt: "Logo", class:"cal-icon" %>
+					      		<span class="date-small"><%= newsarticle.created_at.strftime("%d/%m/%Y") %> </span>
+					      	</div>
+					      	<div>
+						        <%= link_to refinery.newsarticles_newsarticle_path(newsarticle) do %>						        	 
+						        	<%= newsarticle.headline %>
+						        <% end %>
+						    </div>
+					      </div><hr />
 					    <% end %>
 				    <% end %>
-				  </ul>
+				  </div>
 				</div>
 				<%= will_paginate(@news_posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>
 			</div>
