@@ -15,6 +15,7 @@ module Refinery
 
       def show
         @newsarticle = Newsarticle.find(params[:id])
+        @lastarticles = Newsarticle.last(5).reverse
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @newsarticle in the line below:

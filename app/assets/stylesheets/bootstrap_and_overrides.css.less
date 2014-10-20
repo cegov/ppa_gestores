@@ -358,8 +358,9 @@ body {
   margin-bottom: 66px;
   ul {
     li {
+      margin-top: 2px;
       padding-left: 20px;
-      border-bottom: solid px lighten(@dark-gray, 60%);
+      border-bottom: solid 2px lighten(@dark-gray, 60%);
       line-height: 28px;
       a {
         text-decoration:none;
@@ -449,7 +450,7 @@ ul#courses {
   }
 }  
 
-/*** NEWS ******************************************************/
+/*** NEWSARTICLES *********************************************/
 section.news_title_and_lead {
   #news_title {
     margin-bottom: 25px;
@@ -473,6 +474,49 @@ section.news_authorship {
   p.news-published {
     margin-bottom: 0px;
   }
+}
+
+div#last_news_box {
+  margin-top: 10px;  
+  border: 1px solid darken(@box-bg-color, 10%);
+  background-color: @box-bg-color;
+  .box, .box-last {
+    padding: 20px;    
+  }
+  .box {
+    border-bottom: 2px solid darken(@box-bg-color, 10%);
+  }
+  .box-last {
+    font-size: 12px;
+    text-align: right;
+    .go-btn {
+      height: 18px;
+      width: 18px;
+      margin-left: 3px;
+    }
+  }
+  h2.box-title {    
+    color: darken(@primary1, 2%);
+    padding: 20px;
+    font-size: 16px;
+    font-weight: normal;   
+    border-bottom: 2px solid darken(@box-bg-color, 10%);    
+  }
+  a {
+      text-decoration:none;
+      &:link {
+        color: @dark-gray !important;          
+      } 
+      &:visited {
+        color: @dark-gray !important;          
+      }  /* visited link */  
+      &:hover {
+        color:darken(@dark-gray, 15%) !important;          
+      }  /* mouse over link */
+      &:active {
+        color:darken(@dark-gray, 15%) !important;          
+      }  /* selected link */
+    }
 }
 
 /*** HOME ******************************************************/
@@ -505,7 +549,7 @@ section.news_authorship {
       display: block;
       margin-bottom: 25px;
       img.interaction_img {
-        
+        max-width: 220px;
       }
     }
   }

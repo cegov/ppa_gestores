@@ -28,7 +28,10 @@
 				  
 				  
 				  <% if !@newsarticle.photo_id.blank? %>			  	
-				  	<%= image_fu @newsarticle.photo, "400x400", class: "image-align-left" %>
+				  	<%= 
+				  	 	# image_fu @newsarticle.photo, "400x400", class: "image-align-left" 
+				  	 	image_fu @newsarticle.photo, "460x460"
+				  	%>
 				  <% end %> 
 				  <section>    
 				    <p>
@@ -48,6 +51,23 @@
 		</div>
 		<div id="home_news_sidebar" class="span4">
 			<%= render 'refinery/pages/home_news_sidebar' %>
+			<div id="last_news_box">
+				<h2 class="box-title">ÚLTIMAS NOTÍCIAS</h2>
+				<ul>
+					<% @lastarticles.each do |newsarticle| %>				
+						<li class="box">
+							<%= link_to newsarticle.headline, refinery.newsarticles_newsarticle_path(newsarticle) %>
+						</li>
+					<% end %>
+					<li class="box-last">
+						<%= link_to refinery.newsarticles_newsarticles_url do %>
+							<%= "Acesse lista de Notícias".upcase %> <%= image_tag 'blue_go.png', class: "go-btn" %>
+						<% end %>
+						
+					</li>	
+				</ul>					
+				
+			</div>			
 		</div>	
 	</div>
 <% end %>
