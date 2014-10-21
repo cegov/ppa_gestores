@@ -8,7 +8,7 @@
  
 var BlueImpPlugin = {
 	// if this element is on page, the plugin starts
-	initTarget: "#video-gallery",
+	initTarget: "#video-gallery", // A DIV WITH THIS ID MUST ENVELOP THE LINKS
 	defaultOptions: {
 		carousel: true,
 		container: '#blueimp-video-carousel'
@@ -40,7 +40,7 @@ var BlueImpPlugin = {
 				var urlAndId = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
 				
 				var title = $(this).text();
-				if(urlAndId != null){	
+				if(urlAndId != null){	// adds only links that match youtube URL video criteria 
 					var videoUrl = urlAndId[0];
 					var videoId = urlAndId[1];
 					links.push({
