@@ -58,6 +58,7 @@ h1, h2, h3, h4, h5, h6{
 // This class is used to define how elements will look in high contrast mode
 // to define the intended behavior or add new page elements that should behave like that, 
 // do so in the file high_contrast.js 
+
 .high-contrast {
   background-image: none !important;    
   background-color: #000 !important;  
@@ -525,6 +526,15 @@ div#last_news_box {
 }
 
 #home_news {
+  .blueimp-gallery-carousel {
+    box-shadow: none;
+    height: 65px;
+  }
+  div.slides div.slide img {
+    cursor: pointer;
+  }
+
+  
   #home_news_highlight div#home_news_box { 
     div#news_highlight div#home_highlight_image_box {
       margin-top: 10px;
