@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140515174205) do
+ActiveRecord::Schema.define(:version => 20141208190357) do
 
   create_table "refinery_courses", :force => true do |t|
     t.string   "name"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20140515174205) do
     t.string   "layout_template"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.boolean  "show_in_sidebar",     :default => false
   end
 
   add_index "refinery_pages", ["depth"], :name => "index_refinery_pages_on_depth"

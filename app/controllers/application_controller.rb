@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery except: :verify_user
-  before_filter :get_courses
-  
+  protect_from_forgery except: :verify_user  
+  before_filter :find_pages_for_sidebar
+  before_filter :get_courses  
   helper_method :refinery_user?
   
   
@@ -28,13 +28,18 @@ class ApplicationController < ActionController::Base
       format.xml { render "sitemap/index.xml" }
     end        
   end
-  
-  def get_courses
-    @courses = Refinery::Courses::Course
-          .where(:is_active => true)
-          .where("photo_id IS NOT NULL")
-          .order("position ASC")          
-          .limit(MAX_COURSES_AT_HOME_PAGE) 
-  end
+    
+  protected
+    def find_pages_for_sidebar
+      @pages_for_sidebar = Refinery::Page.where(show_in_sidebar: true)     
+    end
+    
+    def get_courses
+      @courses = Refinery::Courses::Course
+            .where(:is_active => true)
+            .where("photo_id IS NOT NULL")
+            .order("position ASC")          
+            .limit(MAX_COURSES_AT_HOME_PAGE) 
+    end  
   
 end
