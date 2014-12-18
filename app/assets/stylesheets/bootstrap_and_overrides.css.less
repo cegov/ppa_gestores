@@ -70,6 +70,8 @@ h1, h2, h3, h4, h5, h6{
   }
   a {
     text-decoration:none;
+    color: @white !important;
+    background-color: @black !important;
     &:link {
       color: @white !important;
       background-color: @black !important;
@@ -366,16 +368,16 @@ body {
       a {
         text-decoration:none;
         &:link {
-          color: @dark-gray !important;          
+          color: @dark-gray;          
         } 
         &:visited {
-          color: @dark-gray !important;          
+          color: @dark-gray;          
         }  /* visited link */  
         &:hover {
-          color:darken(@dark-gray, 15%) !important;          
+          color:darken(@dark-gray, 15%);          
         }  /* mouse over link */
         &:active {
-          color:darken(@dark-gray, 15%) !important;          
+          color:darken(@dark-gray, 15%);          
         }  /* selected link */
       }
     }    

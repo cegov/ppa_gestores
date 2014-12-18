@@ -10,7 +10,8 @@ var HighContrast = {
 		// HIGH CONTRAST MODE
 		backgroundTargets: ['header', '#accessibility_menu', "#logo_bar", 
 			"#page .sidebar-nav", "#nav_services .navbar-inner", "body", 
-			"footer", "footer #government_links", "footer #footer_links"
+			"footer", "footer #government_links", "footer #footer_links", "#rodape",
+			"#rodape2"
 		]
 		/**********************************************************************/
 	}, 
@@ -32,7 +33,7 @@ var HighContrast = {
 			if(HighContrast.isOn == false){
 				HighContrast.isOn = true;
 				$.cookie("high-contrast", "1");
-				self.changeElementColorsToHighContrast();				
+				self.changeElementColorsToHighContrast();
 			}
 			else {
 				HighContrast.isOn = false; 
