@@ -20,7 +20,8 @@ gem 'capistrano', '< 3.0'
 gem 'fog'
 
 # solr fulltext search
-gem 'sunspot_rails', '~> 1.3.0'  
+gem 'sunspot_rails', '~> 1.3.0'
+gem 'sunspot_solr'
 
 group :development, :test do
   gem 'thin'
