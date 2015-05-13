@@ -27,6 +27,8 @@ group :development, :test do
   # gem 'sqlite3'
   gem 'mysql2'  
   gem 'sunspot_solr'
+  gem 'railroady'
+  gem "rails-erd"
 end
 
 group :production do  
